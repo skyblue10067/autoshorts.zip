@@ -6,6 +6,17 @@
   "format": "multiple_choice/geography",
   "difficulty": "",
   "title": "Can you get this right? Which is the largest country in Africa by area?",
+  "id": "uq6s7Woa5ZA",
+  "views": 0,
+  "likes": 0
+ },
+ {
+  "n": 2,
+  "hook": "Which country won the 2022 World Cup?",
+  "type": "multiple_choice",
+  "format": "multiple_choice/football",
+  "difficulty": "",
+  "title": "Can you get this right? Which country won the 2022 World Cup?",
   "id": null
  }
 ]
