@@ -1,0 +1,17 @@
+[
+{"type":"multiple_choice","cat":"geography","question":"Which is the largest country in Africa by area?","options":["Nigeria","Algeria","Egypt","South Africa"],"answer":1,"explain":"Algeria is the largest country in Africa."},
+{"type":"multiple_choice","cat":"football","question":"Which country won the 2022 World Cup?","options":["France","Brazil","Argentina","Germany"],"answer":2,"explain":"Argentina won it, beating France on penalties."},
+{"type":"multiple_choice","cat":"science","question":"Which planet is closest to the sun?","options":["Venus","Mercury","Mars","Earth"],"answer":1,"explain":"Mercury is the closest planet to the sun."},
+{"type":"multiple_choice","cat":"general","question":"How many continents are there?","options":["5","6","7","8"],"answer":2,"explain":"There are seven continents."},
+{"type":"multiple_choice","cat":"minecraft","question":"What do you need to make a Nether portal?","options":["Obsidian","Diamond","Bedrock","Gold"],"answer":0,"explain":"A Nether portal frame is made of obsidian."},
+{"type":"multiple_choice","cat":"science","question":"What gas do plants take in from the air?","options":["Oxygen","Nitrogen","Carbon dioxide","Helium"],"answer":2,"explain":"Plants take in carbon dioxide for photosynthesis."},
+{"type":"multiple_choice","cat":"geography","question":"What is the capital city of Cameroon?","options":["Douala","Yaounde","Bamenda","Garoua"],"answer":1,"explain":"Yaounde is the capital. Douala is the biggest city."},
+{"type":"multiple_choice","cat":"football","question":"Which African team reached the 2022 World Cup semi-finals?","options":["Senegal","Cameroon","Morocco","Ghana"],"answer":2,"explain":"Morocco was the first African team in a World Cup semi-final."},
+{"type":"true_false","cat":"general","question":"True or false: The Great Wall of China can be seen from space with the naked eye.","options":["True","False"],"answer":1,"explain":"It is a popular myth. The wall is too narrow to see."},
+{"type":"true_false","cat":"science","question":"True or false: Lightning never strikes the same place twice.","options":["True","False"],"answer":1,"explain":"Lightning often strikes the same place, like tall buildings."},
+{"type":"true_false","cat":"science","question":"True or false: An octopus has three hearts.","options":["True","False"],"answer":0,"explain":"Two pump blood to the gills and one to the body."},
+{"type":"math","cat":"general","question":"Quick maths: what is 15 times 4?","options":["45","60","65","75"],"answer":1,"explain":"15 times 4 is 60."},
+{"type":"math","cat":"general","question":"Quick maths: what is 144 divided by 12?","options":["10","11","12","14"],"answer":2,"explain":"144 divided by 12 is 12."},
+{"type":"riddle","cat":"general","question":"Riddle: what has keys but cannot open locks?","options":["A piano","A map","A clock","A door"],"answer":0,"explain":"A piano has keys, but they play music."},
+{"type":"odd_one_out","cat":"general","question":"Which one is NOT a fruit?","options":["Apple","Carrot","Mango","Grape"],"answer":1,"explain":"A carrot is a root vegetable."}
+]
