@@ -1,6 +1,6 @@
 """Quiz Shorts bot: AI writes + fact-checks a quiz, renders a 9:16 video with voice and sound.
 Reads (never edits or deletes) your channel stats and comments so the AI learns what works."""
-import json, os, sys, re, random, textwrap, subprocess, difflib, datetime, math, urllib.request
+import json, os, sys, re, random, textwrap, subprocess, difflib, datetime, math, urllib.request, urllib.error
 from functools import lru_cache
 from PIL import Image, ImageDraw, ImageFont
 
@@ -34,23 +34,6 @@ def sync_channel():
         from google.oauth2.credentials import Credentials
         from googleapiclient.discovery import build
         c = Credentials(None, refresh_token=os.environ["YT_REFRESH"], token_uri="https://oauth2.googleapis.com/token",
-            client_id=os.environ["YT_ID"], client_secret=os.environ["YT_SECRET"])
-        yt = build("youtube", "v3", credentials=c)
-        up = yt.channels().list(part="contentDetails", mine=True).execute()["items"][0]["contentDetails"]["relatedPlaylists"]["uploads"]
-        items = yt.playlistItems().list(part="contentDetails", playlistId=up, maxResults=50).execute()["items"]
-        vids = yt.videos().list(part="snippet,statistics", id=",".join(i["contentDetails"]["videoId"] for i in items)).execute()["items"]
-        for v in vids:
-            for h in HIST:
-                if f"[q{h['n']}]" in v["snippet"].get("description", ""):
-                    st = v["statistics"]
-                    h.update(id=v["id"], views=int(st.get("viewCount", 0)), likes=int(st.get("likeCount", 0)))
-        for h in [h for h in HIST if h.get("id")][-8:]:
-            try:
-                r = yt.commentThreads().list(part="snippet", videoId=h["id"], maxResults=15, order="relevance").execute()
-                for t in r["items"]:
-                    COMMENTS.append((h["hook"], t["snippet"]["topLevelComment"]["snippet"]["textDisplay"][:200]))
-            except Exception as e:
-                print("comments skipped:", e)
         try:  # optional: watch-time retention (needs the analytics read permission; skipped if absent)
             ids = [h["id"] for h in HIST if h.get("id")][-50:]
             ya = build("youtubeAnalytics", "v2", credentials=c)
@@ -89,14 +72,23 @@ def write_report(use_ret=False):
 # ---------------------------------------------------------------- AI: write + fact-check
 def call_ai(model, prompt, temp=0.7):
     tok = os.environ.get("GITHUB_TOKEN")
-    if not tok: return None
-    req = urllib.request.Request(API, data=json.dumps({"model": model, "temperature": temp,
-        "messages": [{"role": "user", "content": prompt}]}).encode(),
-        headers={"Authorization": "Bearer " + tok, "Content-Type": "application/json"})
+    if not tok:
+        print("AI skipped: no GITHUB_TOKEN"); return None
+    body = json.dumps({"model": model, "temperature": temp, "messages": [{"role": "user", "content": prompt}]}).encode()
+    req = urllib.request.Request(API, data=body, method="POST", headers={
+        "Authorization": "Bearer " + tok, "Content-Type": "application/json",
+        "Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28", "User-Agent": "quiz-shorts-bot"})
     try:
-        return json.load(urllib.request.urlopen(req, timeout=90))["choices"][0]["message"]["content"]
+        with urllib.request.urlopen(req, timeout=90) as r:
+            status, raw = r.status, r.read().decode("utf-8", "replace")
+    except urllib.error.HTTPError as e:
+        print("AI HTTP error:", model, e.code, e.read().decode("utf-8", "replace")[:300]); return None
     except Exception as e:
-        print("AI call failed:", model, str(e)[:120]); return None
+        print("AI call failed:", model, str(e)[:150]); return None
+    try:
+        return json.loads(raw)["choices"][0]["message"]["content"]
+    except Exception:
+        print("AI bad reply:", model, "status", status, "body starts:", raw[:300]); return None
 
 def jparse(text):
     m = re.search(r"\{.*\}", text or "", re.S)
@@ -152,7 +144,9 @@ def gen_prompt(summary):
 def pick_quiz():
     summary, use_ret = learning_summary()
     for attempt in range(5):
-        q = clean(jparse(call_ai(GEN_MODEL, gen_prompt(summary), 1.0)) or {})
+        raw = call_ai(GEN_MODEL, gen_prompt(summary), 1.0)
+        if raw is None: return None  # AI unreachable: stop retrying, use the backup quiz
+        q = clean(jparse(raw) or {})
         if not q or too_similar(q): continue
         if verify(q): return q
         print("fact-check failed, trying another quiz")
