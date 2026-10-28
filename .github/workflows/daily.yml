@@ -1,0 +1,39 @@
+name: quiz-short
+on:
+  schedule:
+    - cron: "0 6,18 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+  models: read
+concurrency: quiz-short
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: Auto
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      YT_ID: ${{ secrets.YT_ID }}
+      YT_SECRET: ${{ secrets.YT_SECRET }}
+      YT_REFRESH: ${{ secrets.YT_REFRESH }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: sudo apt-get install -y ffmpeg fonts-dejavu-core && pip install edge-tts pillow google-api-python-client google-auth
+      - run: python make_video.py
+      - name: Post to YouTube (needs the upload permission)
+        if: env.YT_REFRESH != '' && hashFiles('out/*.mp4') != ''
+        continue-on-error: true
+        run: python upload.py
+      - name: Save the video as a release (download it from the Releases page)
+        if: hashFiles('out/*.mp4') != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "v${{ github.run_number }}" out/*.mp4 --title "$(cat out/title.txt)" --notes "$(cat out/title.txt)"
+      - name: Save progress and report
+        run: |
+          git config user.name bot && git config user.email bot@users.noreply.github.com
+          git add history.json REPORT.md && git commit -m "update" || true
+          git pull --rebase || true
+          git push
