@@ -7,7 +7,7 @@
   "difficulty": "",
   "title": "Can you get this right? Which is the largest country in Africa by area?",
   "id": "uq6s7Woa5ZA",
-  "views": 0,
+  "views": 6,
   "likes": 0
  },
  {
@@ -17,6 +17,17 @@
   "format": "multiple_choice/football",
   "difficulty": "",
   "title": "Can you get this right? Which country won the 2022 World Cup?",
+  "id": "JYeH6xcvuPM",
+  "views": 4,
+  "likes": 0
+ },
+ {
+  "n": 3,
+  "hook": "Which planet is closest to the sun?",
+  "type": "multiple_choice",
+  "format": "multiple_choice/science",
+  "difficulty": "",
+  "title": "Can you get this right? Which planet is closest to the sun?",
   "id": null
  }
 ]
