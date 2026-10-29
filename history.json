@@ -29,7 +29,7 @@
   "difficulty": "",
   "title": "Can you get this right? Which planet is closest to the sun?",
   "id": "T2HAv71MGsI",
-  "views": 3,
+  "views": 4,
   "likes": 0
  },
  {
@@ -39,6 +39,17 @@
   "format": "multiple_choice/general",
   "difficulty": "",
   "title": "Can you get this right? How many continents are there?",
+  "id": "1Uu7ECxERLA",
+  "views": 3,
+  "likes": 0
+ },
+ {
+  "n": 5,
+  "hook": "What do you need to make a Nether portal?",
+  "type": "multiple_choice",
+  "format": "multiple_choice/minecraft",
+  "difficulty": "",
+  "title": "Can you get this right? What do you need to make a Nether portal?",
   "id": null
  }
 ]
