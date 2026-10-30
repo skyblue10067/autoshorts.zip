@@ -1,17 +1,768 @@
 [
-{"type":"multiple_choice","cat":"geography","question":"Which is the largest country in Africa by area?","options":["Nigeria","Algeria","Egypt","South Africa"],"answer":1,"explain":"Algeria is the largest country in Africa."},
-{"type":"multiple_choice","cat":"football","question":"Which country won the 2022 World Cup?","options":["France","Brazil","Argentina","Germany"],"answer":2,"explain":"Argentina won it, beating France on penalties."},
-{"type":"multiple_choice","cat":"science","question":"Which planet is closest to the sun?","options":["Venus","Mercury","Mars","Earth"],"answer":1,"explain":"Mercury is the closest planet to the sun."},
-{"type":"multiple_choice","cat":"general","question":"How many continents are there?","options":["5","6","7","8"],"answer":2,"explain":"There are seven continents."},
-{"type":"multiple_choice","cat":"minecraft","question":"What do you need to make a Nether portal?","options":["Obsidian","Diamond","Bedrock","Gold"],"answer":0,"explain":"A Nether portal frame is made of obsidian."},
-{"type":"multiple_choice","cat":"science","question":"What gas do plants take in from the air?","options":["Oxygen","Nitrogen","Carbon dioxide","Helium"],"answer":2,"explain":"Plants take in carbon dioxide for photosynthesis."},
-{"type":"multiple_choice","cat":"geography","question":"What is the capital city of Cameroon?","options":["Douala","Yaounde","Bamenda","Garoua"],"answer":1,"explain":"Yaounde is the capital. Douala is the biggest city."},
-{"type":"multiple_choice","cat":"football","question":"Which African team reached the 2022 World Cup semi-finals?","options":["Senegal","Cameroon","Morocco","Ghana"],"answer":2,"explain":"Morocco was the first African team in a World Cup semi-final."},
-{"type":"true_false","cat":"general","question":"True or false: The Great Wall of China can be seen from space with the naked eye.","options":["True","False"],"answer":1,"explain":"It is a popular myth. The wall is too narrow to see."},
-{"type":"true_false","cat":"science","question":"True or false: Lightning never strikes the same place twice.","options":["True","False"],"answer":1,"explain":"Lightning often strikes the same place, like tall buildings."},
-{"type":"true_false","cat":"science","question":"True or false: An octopus has three hearts.","options":["True","False"],"answer":0,"explain":"Two pump blood to the gills and one to the body."},
-{"type":"math","cat":"general","question":"Quick maths: what is 15 times 4?","options":["45","60","65","75"],"answer":1,"explain":"15 times 4 is 60."},
-{"type":"math","cat":"general","question":"Quick maths: what is 144 divided by 12?","options":["10","11","12","14"],"answer":2,"explain":"144 divided by 12 is 12."},
-{"type":"riddle","cat":"general","question":"Riddle: what has keys but cannot open locks?","options":["A piano","A map","A clock","A door"],"answer":0,"explain":"A piano has keys, but they play music."},
-{"type":"odd_one_out","cat":"general","question":"Which one is NOT a fruit?","options":["Apple","Carrot","Mango","Grape"],"answer":1,"explain":"A carrot is a root vegetable."}
+{
+"type": "multiple_choice",
+"cat": "geography",
+"question": "Which is the largest country in Africa by area?",
+"options": [
+"Nigeria",
+"Algeria",
+"Egypt",
+"South Africa"
+],
+"answer": 1,
+"explain": "Algeria is the largest country in Africa."
+},
+{
+"type": "multiple_choice",
+"cat": "football",
+"question": "Which country won the 2022 World Cup?",
+"options": [
+"France",
+"Brazil",
+"Argentina",
+"Germany"
+],
+"answer": 2,
+"explain": "Argentina won it, beating France on penalties."
+},
+{
+"type": "multiple_choice",
+"cat": "science",
+"question": "Which planet is closest to the sun?",
+"options": [
+"Venus",
+"Mercury",
+"Mars",
+"Earth"
+],
+"answer": 1,
+"explain": "Mercury is the closest planet to the sun."
+},
+{
+"type": "multiple_choice",
+"cat": "general",
+"question": "How many continents are there?",
+"options": [
+"5",
+"6",
+"7",
+"8"
+],
+"answer": 2,
+"explain": "There are seven continents."
+},
+{
+"type": "multiple_choice",
+"cat": "minecraft",
+"question": "What do you need to make a Nether portal?",
+"options": [
+"Obsidian",
+"Diamond",
+"Bedrock",
+"Gold"
+],
+"answer": 0,
+"explain": "A Nether portal frame is made of obsidian."
+},
+{
+"type": "multiple_choice",
+"cat": "science",
+"question": "What gas do plants take in from the air?",
+"options": [
+"Oxygen",
+"Nitrogen",
+"Carbon dioxide",
+"Helium"
+],
+"answer": 2,
+"explain": "Plants take in carbon dioxide for photosynthesis."
+},
+{
+"type": "multiple_choice",
+"cat": "geography",
+"question": "What is the capital city of Cameroon?",
+"options": [
+"Douala",
+"Yaounde",
+"Bamenda",
+"Garoua"
+],
+"answer": 1,
+"explain": "Yaounde is the capital. Douala is the biggest city."
+},
+{
+"type": "multiple_choice",
+"cat": "football",
+"question": "Which African team reached the 2022 World Cup semi-finals?",
+"options": [
+"Senegal",
+"Cameroon",
+"Morocco",
+"Ghana"
+],
+"answer": 2,
+"explain": "Morocco was the first African team in a World Cup semi-final."
+},
+{
+"type": "true_false",
+"cat": "general",
+"question": "True or false: The Great Wall of China can be seen from space with the naked eye.",
+"options": [
+"True",
+"False"
+],
+"answer": 1,
+"explain": "It is a popular myth. The wall is too narrow to see."
+},
+{
+"type": "true_false",
+"cat": "science",
+"question": "True or false: Lightning never strikes the same place twice.",
+"options": [
+"True",
+"False"
+],
+"answer": 1,
+"explain": "Lightning often strikes the same place, like tall buildings."
+},
+{
+"type": "true_false",
+"cat": "science",
+"question": "True or false: An octopus has three hearts.",
+"options": [
+"True",
+"False"
+],
+"answer": 0,
+"explain": "Two pump blood to the gills and one to the body."
+},
+{
+"type": "math",
+"cat": "general",
+"question": "Quick maths: what is 15 times 4?",
+"options": [
+"45",
+"60",
+"65",
+"75"
+],
+"answer": 1,
+"explain": "15 times 4 is 60."
+},
+{
+"type": "math",
+"cat": "general",
+"question": "Quick maths: what is 144 divided by 12?",
+"options": [
+"10",
+"11",
+"12",
+"14"
+],
+"answer": 2,
+"explain": "144 divided by 12 is 12."
+},
+{
+"type": "riddle",
+"cat": "general",
+"question": "Riddle: what has keys but cannot open locks?",
+"options": [
+"A piano",
+"A map",
+"A clock",
+"A door"
+],
+"answer": 0,
+"explain": "A piano has keys, but they play music."
+},
+{
+"type": "odd_one_out",
+"cat": "general",
+"question": "Which one is NOT a fruit?",
+"options": [
+"Apple",
+"Carrot",
+"Mango",
+"Grape"
+],
+"answer": 1,
+"explain": "A carrot is a root vegetable."
+},
+{
+"type": "flag_guess",
+"cat": "geography",
+"difficulty": "easy",
+"emoji": "🇨🇲",
+"question": "Which country's flag is this?",
+"options": [
+"Cameroon",
+"Nigeria",
+"Senegal",
+"Ghana"
+],
+"answer": 0,
+"explain": "Cameroon's flag has green, red and yellow stripes with a gold star."
+},
+{
+"type": "flag_guess",
+"cat": "geography",
+"difficulty": "easy",
+"emoji": "🇧🇷",
+"question": "Which country's flag is this?",
+"options": [
+"Argentina",
+"Brazil",
+"Portugal",
+"Colombia"
+],
+"answer": 1,
+"explain": "Brazil's flag has a blue globe with the words Order and Progress."
+},
+{
+"type": "emoji_guess",
+"cat": "movies",
+"difficulty": "easy",
+"emoji": "🦁👑",
+"question": "Which movie is this?",
+"options": [
+"The Lion King",
+"Aladdin",
+"Frozen",
+"Moana"
+],
+"answer": 0,
+"explain": "The Lion King came out in 1994 and Simba is the star."
+},
+{
+"type": "multiple_choice",
+"cat": "science",
+"difficulty": "easy",
+"emoji": "",
+"question": "What is the largest planet in our solar system?",
+"options": [
+"Saturn",
+"Jupiter",
+"Neptune",
+"Earth"
+],
+"answer": 1,
+"explain": "Jupiter is more than 1,300 times bigger than Earth by volume."
+},
+{
+"type": "multiple_choice",
+"cat": "football",
+"difficulty": "easy",
+"emoji": "",
+"question": "How many players does one team have on the pitch?",
+"options": [
+"9",
+"10",
+"11",
+"12"
+],
+"answer": 2,
+"explain": "Each team plays with 11 players, including the goalkeeper."
+},
+{
+"type": "multiple_choice",
+"cat": "geography",
+"difficulty": "medium",
+"emoji": "",
+"question": "Which is the longest river in Africa?",
+"options": [
+"Congo",
+"Niger",
+"Nile",
+"Zambezi"
+],
+"answer": 2,
+"explain": "The Nile is the longest river in Africa."
+},
+{
+"type": "multiple_choice",
+"cat": "animals",
+"difficulty": "easy",
+"emoji": "",
+"question": "What is the fastest land animal?",
+"options": [
+"Lion",
+"Cheetah",
+"Horse",
+"Leopard"
+],
+"answer": 1,
+"explain": "A cheetah can run about 100 kilometres per hour."
+},
+{
+"type": "multiple_choice",
+"cat": "history",
+"difficulty": "medium",
+"emoji": "",
+"question": "Who was the first president of the United States?",
+"options": [
+"Abraham Lincoln",
+"George Washington",
+"Thomas Jefferson",
+"John Adams"
+],
+"answer": 1,
+"explain": "George Washington led the country from 1789 to 1797."
+},
+{
+"type": "multiple_choice",
+"cat": "minecraft",
+"difficulty": "easy",
+"emoji": "",
+"question": "Which Minecraft mob explodes near players?",
+"options": [
+"Zombie",
+"Creeper",
+"Skeleton",
+"Spider"
+],
+"answer": 1,
+"explain": "Creepers hiss, then blow up when they get close."
+},
+{
+"type": "multiple_choice",
+"cat": "minecraft",
+"difficulty": "easy",
+"emoji": "",
+"question": "What do you use to tame a wolf in Minecraft?",
+"options": [
+"Bone",
+"Apple",
+"Wheat",
+"Fish"
+],
+"answer": 0,
+"explain": "Wolves are tamed with bones."
+},
+{
+"type": "multiple_choice",
+"cat": "roblox",
+"difficulty": "easy",
+"emoji": "",
+"question": "What is the currency in Roblox called?",
+"options": [
+"Coins",
+"Robux",
+"Gems",
+"Credits"
+],
+"answer": 1,
+"explain": "Robux is the money used to buy items in Roblox."
+},
+{
+"type": "multiple_choice",
+"cat": "science",
+"difficulty": "easy",
+"emoji": "",
+"question": "What is H2O better known as?",
+"options": [
+"Salt",
+"Water",
+"Sugar",
+"Air"
+],
+"answer": 1,
+"explain": "H2O is two hydrogen atoms and one oxygen atom: water."
+},
+{
+"type": "multiple_choice",
+"cat": "geography",
+"difficulty": "easy",
+"emoji": "",
+"question": "Which is the largest ocean on Earth?",
+"options": [
+"Atlantic",
+"Indian",
+"Pacific",
+"Arctic"
+],
+"answer": 2,
+"explain": "The Pacific Ocean covers about a third of the planet."
+},
+{
+"type": "multiple_choice",
+"cat": "football",
+"difficulty": "easy",
+"emoji": "",
+"question": "How many minutes is a normal football match?",
+"options": [
+"60",
+"80",
+"90",
+"100"
+],
+"answer": 2,
+"explain": "Two halves of 45 minutes make 90, plus added time."
+},
+{
+"type": "multiple_choice",
+"cat": "football",
+"difficulty": "medium",
+"emoji": "",
+"question": "Who won the 2023 Ballon d'Or?",
+"options": [
+"Erling Haaland",
+"Lionel Messi",
+"Kylian Mbappe",
+"Karim Benzema"
+],
+"answer": 1,
+"explain": "Lionel Messi won his eighth Ballon d'Or in 2023."
+},
+{
+"type": "multiple_choice",
+"cat": "science",
+"difficulty": "medium",
+"emoji": "",
+"question": "How many bones does an adult human have?",
+"options": [
+"106",
+"206",
+"306",
+"406"
+],
+"answer": 1,
+"explain": "Babies are born with around 300 bones that fuse together."
+},
+{
+"type": "multiple_choice",
+"cat": "general",
+"difficulty": "easy",
+"emoji": "",
+"question": "What colour do you get by mixing blue and yellow?",
+"options": [
+"Green",
+"Purple",
+"Orange",
+"Brown"
+],
+"answer": 0,
+"explain": "Blue and yellow paint make green."
+},
+{
+"type": "multiple_choice",
+"cat": "african culture",
+"difficulty": "easy",
+"emoji": "",
+"question": "What is the capital city of Nigeria?",
+"options": [
+"Lagos",
+"Abuja",
+"Kano",
+"Ibadan"
+],
+"answer": 1,
+"explain": "Abuja became the capital in 1991. Lagos is the biggest city."
+},
+{
+"type": "multiple_choice",
+"cat": "african culture",
+"difficulty": "easy",
+"emoji": "",
+"question": "In which country are the Pyramids of Giza?",
+"options": [
+"Sudan",
+"Egypt",
+"Libya",
+"Morocco"
+],
+"answer": 1,
+"explain": "The Great Pyramid in Egypt is over 4,000 years old."
+},
+{
+"type": "multiple_choice",
+"cat": "african culture",
+"difficulty": "medium",
+"emoji": "",
+"question": "Which African country has the most people?",
+"options": [
+"Ethiopia",
+"Egypt",
+"Nigeria",
+"South Africa"
+],
+"answer": 2,
+"explain": "Nigeria has over 200 million people."
+},
+{
+"type": "multiple_choice",
+"cat": "animals",
+"difficulty": "easy",
+"emoji": "",
+"question": "How many legs does a spider have?",
+"options": [
+"6",
+"8",
+"10",
+"12"
+],
+"answer": 1,
+"explain": "Spiders have eight legs. Insects have six."
+},
+{
+"type": "multiple_choice",
+"cat": "science",
+"difficulty": "easy",
+"emoji": "",
+"question": "Which planet is called the Red Planet?",
+"options": [
+"Mars",
+"Venus",
+"Jupiter",
+"Mercury"
+],
+"answer": 0,
+"explain": "Iron dust makes the surface of Mars look red."
+},
+{
+"type": "true_false",
+"cat": "science",
+"difficulty": "medium",
+"emoji": "",
+"question": "True or false: Humans only use 10 percent of their brains.",
+"options": [
+"True",
+"False"
+],
+"answer": 1,
+"explain": "It is a myth. We use almost all of our brain."
+},
+{
+"type": "true_false",
+"cat": "animals",
+"difficulty": "easy",
+"emoji": "",
+"question": "True or false: A group of lions is called a pride.",
+"options": [
+"True",
+"False"
+],
+"answer": 0,
+"explain": "Lions live in groups called prides."
+},
+{
+"type": "true_false",
+"cat": "science",
+"difficulty": "easy",
+"emoji": "",
+"question": "True or false: The sun is a star.",
+"options": [
+"True",
+"False"
+],
+"answer": 0,
+"explain": "The sun is the star at the centre of our solar system."
+},
+{
+"type": "true_false",
+"cat": "animals",
+"difficulty": "medium",
+"emoji": "",
+"question": "True or false: Goldfish only remember things for three seconds.",
+"options": [
+"True",
+"False"
+],
+"answer": 1,
+"explain": "Goldfish can remember things for months."
+},
+{
+"type": "math",
+"cat": "general",
+"difficulty": "easy",
+"emoji": "",
+"question": "Quick maths: what is 12 times 12?",
+"options": [
+"124",
+"134",
+"144",
+"154"
+],
+"answer": 2,
+"explain": "12 times 12 is 144."
+},
+{
+"type": "math",
+"cat": "general",
+"difficulty": "medium",
+"emoji": "",
+"question": "Quick maths: what is 25 percent of 200?",
+"options": [
+"25",
+"40",
+"50",
+"75"
+],
+"answer": 2,
+"explain": "A quarter of 200 is 50."
+},
+{
+"type": "math",
+"cat": "general",
+"difficulty": "easy",
+"emoji": "",
+"question": "Quick maths: what is 7 times 8?",
+"options": [
+"54",
+"56",
+"58",
+"64"
+],
+"answer": 1,
+"explain": "7 times 8 is 56."
+},
+{
+"type": "riddle",
+"cat": "general",
+"difficulty": "medium",
+"emoji": "",
+"question": "Riddle: what has hands but cannot clap?",
+"options": [
+"A clock",
+"A tree",
+"A chair",
+"A bird"
+],
+"answer": 0,
+"explain": "A clock has hands that point to the time."
+},
+{
+"type": "riddle",
+"cat": "general",
+"difficulty": "medium",
+"emoji": "",
+"question": "Riddle: what gets wetter the more it dries?",
+"options": [
+"A sponge",
+"A towel",
+"A cloud",
+"A river"
+],
+"answer": 1,
+"explain": "A towel dries you, so it gets wetter."
+},
+{
+"type": "odd_one_out",
+"cat": "science",
+"difficulty": "easy",
+"emoji": "",
+"question": "Which one is NOT a planet?",
+"options": [
+"Mars",
+"Venus",
+"The Moon",
+"Saturn"
+],
+"answer": 2,
+"explain": "The Moon is a satellite that orbits Earth."
+},
+{
+"type": "odd_one_out",
+"cat": "minecraft",
+"difficulty": "easy",
+"emoji": "",
+"question": "Which one is NOT a Minecraft mob?",
+"options": [
+"Creeper",
+"Zombie",
+"Pikachu",
+"Villager"
+],
+"answer": 2,
+"explain": "Pikachu is from Pokemon, not Minecraft."
+},
+{
+"type": "flag_guess",
+"cat": "geography",
+"difficulty": "easy",
+"emoji": "🇳🇬",
+"question": "Which country's flag is this?",
+"options": [
+"Nigeria",
+"Italy",
+"Ireland",
+"Ghana"
+],
+"answer": 0,
+"explain": "Nigeria's flag has two green stripes and a white stripe in the middle."
+},
+{
+"type": "flag_guess",
+"cat": "geography",
+"difficulty": "easy",
+"emoji": "🇯🇵",
+"question": "Which country's flag is this?",
+"options": [
+"South Korea",
+"Japan",
+"China",
+"Vietnam"
+],
+"answer": 1,
+"explain": "Japan's flag is a red circle on white, called the Hinomaru."
+},
+{
+"type": "flag_guess",
+"cat": "geography",
+"difficulty": "medium",
+"emoji": "🇿🇦",
+"question": "Which country's flag is this?",
+"options": [
+"Kenya",
+"South Africa",
+"Zimbabwe",
+"Namibia"
+],
+"answer": 1,
+"explain": "South Africa's flag has a sideways Y shape with six colours."
+},
+{
+"type": "emoji_guess",
+"cat": "movies",
+"difficulty": "easy",
+"emoji": "🧊👸",
+"question": "Which movie is this?",
+"options": [
+"Frozen",
+"Tangled",
+"Moana",
+"Brave"
+],
+"answer": 0,
+"explain": "Frozen is about the sisters Elsa and Anna."
+},
+{
+"type": "emoji_guess",
+"cat": "movies",
+"difficulty": "easy",
+"emoji": "⚡🧙",
+"question": "Which movie is this?",
+"options": [
+"Harry Potter",
+"Lord of the Rings",
+"Narnia",
+"Star Wars"
+],
+"answer": 0,
+"explain": "Harry Potter has a lightning scar on his forehead."
+},
+{
+"type": "emoji_guess",
+"cat": "movies",
+"difficulty": "medium",
+"emoji": "🐢🍕",
+"question": "Which movie is this?",
+"options": [
+"Ninja Turtles",
+"Kung Fu Panda",
+"Shrek",
+"Madagascar"
+],
+"answer": 0,
+"explain": "The Ninja Turtles love pizza."
+}
 ]
