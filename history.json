@@ -7,7 +7,7 @@
   "difficulty": "",
   "title": "Can you get this right? Which is the largest country in Africa by area?",
   "id": "uq6s7Woa5ZA",
-  "views": 7,
+  "views": 8,
   "likes": 0
  },
  {
@@ -18,7 +18,7 @@
   "difficulty": "",
   "title": "Can you get this right? Which country won the 2022 World Cup?",
   "id": "wRD6nH_mK-o",
-  "views": 5,
+  "views": 6,
   "likes": 0
  },
  {
@@ -29,7 +29,7 @@
   "difficulty": "",
   "title": "Can you get this right? Which planet is closest to the sun?",
   "id": "T2HAv71MGsI",
-  "views": 4,
+  "views": 5,
   "likes": 0
  },
  {
@@ -40,7 +40,7 @@
   "difficulty": "",
   "title": "Can you get this right? How many continents are there?",
   "id": "1Uu7ECxERLA",
-  "views": 4,
+  "views": 7,
   "likes": 0
  },
  {
@@ -51,8 +51,8 @@
   "difficulty": "",
   "title": "Can you get this right? What do you need to make a Nether portal?",
   "id": "S2nayWIjTRw",
-  "views": 352,
-  "likes": 7
+  "views": 769,
+  "likes": 11
  },
  {
   "n": 6,
@@ -61,6 +61,17 @@
   "format": "multiple_choice/science",
   "difficulty": "",
   "title": "Can you get this right? What gas do plants take in from the air?",
+  "id": "Vml8ecoD27c",
+  "views": 4,
+  "likes": 0
+ },
+ {
+  "n": 7,
+  "hook": "What is the capital city of Cameroon?",
+  "type": "multiple_choice",
+  "format": "multiple_choice/geography",
+  "difficulty": "",
+  "title": "Can you get this right? What is the capital city of Cameroon?",
   "id": null
  }
 ]
