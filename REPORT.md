@@ -1,27 +1,28 @@
 # Channel report
 
-Typical video: 3.8 views/day
+Typical video: 529.3 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
-| - | - | - | - | multiple_choice/geography | What is the capital of Zimbabwe? |
-| WEAK | 1 | - | 0 | flag_guess/geography | Which country's flag is this? |
-| GOOD | 644 | - | 9 | math/general | Quick maths: what is 509 plus 837? |
-| GOOD | 667 | - | 14 | multiple_choice/geography | What is the capital city of Cameroon? |
-| GOOD | 803 | - | 36 | multiple_choice/science | What gas do plants take in from the air? |
-| GOOD | 962 | - | 13 | multiple_choice/minecraft | What do you need to make a Nether portal? |
-| OK | 10 | - | 0 | multiple_choice/general | How many continents are there? |
+| - | - | - | - | math/general | Quick maths: what is 813 minus 390? |
+| OK | 745 | - | 5 | multiple_choice/geography | What is the capital of Zimbabwe? |
+| WEAK | 2 | - | 0 | flag_guess/geography | Which country's flag is this? |
+| OK | 648 | - | 10 | math/general | Quick maths: what is 509 plus 837? |
+| OK | 679 | - | 16 | multiple_choice/geography | What is the capital city of Cameroon? |
+| OK | 827 | - | 36 | multiple_choice/science | What gas do plants take in from the air? |
+| OK | 975 | - | 13 | multiple_choice/minecraft | What do you need to make a Nether portal? |
+| WEAK | 10 | - | 0 | multiple_choice/general | How many continents are there? |
 | WEAK | 5 | - | 0 | multiple_choice/science | Which planet is closest to the sun? |
 | WEAK | 6 | - | 0 | multiple_choice/football | Which country won the 2022 World Cup? |
-| OK | 8 | - | 0 | multiple_choice/geography | Which is the largest country in Africa by area? |
+| WEAK | 8 | - | 0 | multiple_choice/geography | Which is the largest country in Africa by area? |
 
 ## Latest comments
 
 - **What do you need to make a Nether portal?**: Obsidian 😊
 - **What do you need to make a Nether portal?**: Obsidian
 - **What do you need to make a Nether portal?**: A🎉😂
-- **What do you need to make a Nether portal?**: C😂😂😂😂😂😂😂😂😂😂😂😂😂😂
 - **What do you need to make a Nether portal?**: A
+- **What do you need to make a Nether portal?**: C😂😂😂😂😂😂😂😂😂😂😂😂😂😂
 - **What do you need to make a Nether portal?**: Obsidian
 - **What do you need to make a Nether portal?**: A
 - **What do you need to make a Nether portal?**: A
@@ -44,4 +45,4 @@ Typical video: 3.8 views/day
 
 ## What other quiz channels are doing
 
-Top quiz Shorts on YouTube right now: "I can guess your father’s Name#challenge #quiz #shorts" (755448 views in 1 days, 0 likes, tags ['Facts', 'Fact', 'Quiz', 'Reaction', 'Challenge']); "Guess TMKOC music 🎵😂 #ytshorts #comedy #funny #tmkoc #siblings #shorts #viral #challenge #quiz" (955184 views in 2 days, 0 likes, tags []); "Can You Name These 10 Luxury Car Brands? 🏎️🔥 (The Last One Is Impossible!) #shorts #quiz" (463293 views in 1 days, 0 likes, tags ['car quiz', 'guess the car brand', 'luxury car brands quiz', 'supercars quiz', 'the last one is impossible']); "Qual Clube o Neymar Segue?" (1187846 views in 3 days, 28872 likes, tags []); "Sejal Gaba Hide & Seek Challenge🥶! #ytshorts #facts #quiz" (3809669 views in 11 days, 58359 likes, tags []); "GUESS THE REVERSED FOOTBALLER’S NAME 🔄 #football #soccer #shorts" (1494886 views in 6 days, 46703 likes, tags ['front three', 'football podcast', 'premier league', 'champions league', 'soccer']); "TMKOC Telepathy Challenge 😂 #ytshorts #comedy #funny #quiz #funny #games #shorts #viral #siblings" (1740997 views in 8 days, 13826 likes, tags []); "GUESSING THE REVERSED FOOTBALLER NAME 🤣  #football #soccer #shorts" (738623 views in 5 days, 19050 likes, tags ['front three', 'football podcast', 'premier league', 'champions league', 'soccer']). Weak ones in the same niche: "Odia gk questions and answers 🎯✅#gk #facts #quiz #generalknowledge" (215126 views in 13 days, 0 likes, tags []); "7 Bible Words and Names Explained | Hidden Biblical Meanings Quiz #quiz #biblestudy #shorts" (163879 views in 11 days, 3284 likes, tags []); "Durga Mata quiz #shorts" (159020 views in 11 days, 0 likes, tags []). Trending in gaming: 🔴LIVE | AGE OF EMPIRES 2 | KONA X COCONUT X WINNIE | 1v7 VS #1 PLAYER IN THE WORLD | #BUNGULATE; Final Life: Episode 1 - HE'S BACK!; Hunting Down My Friends For Halloween; G2 vs HLE | WORLDS 2026 | Swiss Stage Day 7; I Shouldn’t Have Taken This Detour…; Rhino Decorations in Hay Day!; 1000 Players Simulate Minecraft's Deadliest Containment Zone...; Beat Me In a 1v1, Get $1000.
+Top quiz Shorts on YouTube right now: "Guess TMKOC music 🎵😂 #ytshorts #comedy #funny #tmkoc #siblings #shorts #viral #challenge #quiz" (1187205 views in 2 days, 0 likes, tags []); "I can guess your father’s Name#challenge #quiz #shorts" (813045 views in 2 days, 0 likes, tags ['Facts', 'Fact', 'Quiz', 'Reaction', 'Challenge']); "Can You Name These 10 Luxury Car Brands? 🏎️🔥 (The Last One Is Impossible!) #shorts #quiz" (592145 views in 1 days, 0 likes, tags ['car quiz', 'guess the car brand', 'luxury car brands quiz', 'supercars quiz', 'the last one is impossible']); "Qual Clube o Neymar Segue?" (1286687 views in 3 days, 30896 likes, tags []); "Sejal Gaba Hide & Seek Challenge🥶! #ytshorts #facts #quiz" (3825164 views in 11 days, 58609 likes, tags []); "GUESS THE REVERSED FOOTBALLER’S NAME 🔄 #football #soccer #shorts" (1578948 views in 6 days, 47991 likes, tags ['front three', 'football podcast', 'premier league', 'champions league', 'soccer']); "GUESSING THE REVERSED FOOTBALLER NAME 🤣  #football #soccer #shorts" (762437 views in 5 days, 19442 likes, tags ['front three', 'football podcast', 'premier league', 'champions league', 'soccer']); "Papa vs Ramayan Quiz: 5/5 milenge ya nahi? 🏹 #challenge #shorts #family" (1289546 views in 9 days, 17148 likes, tags ['Ancient India', 'Epic Facts', 'Epic Quiz', 'Hindu Quiz', 'Hinduism Facts']). Weak ones in the same niche: "Os mobs vão destruir o mundo 😭" (118076 views in 9 days, 1186 likes, tags ['minecraft na vida real', 'Minecraft Na Vida Real', 'totem da imortalidade', 'Totem Da Imortalidade', 'Spawnar Mobs']); "DRDONUT $100B TRUST TEST WITH FAREX #shorts #minecraft  #drdonutt" (83453 views in 6 days, 637 likes, tags ['minecraft', 'drdonutt', 'dr donut', 'dr donut clips', 'dr donut shorts']); "Te desafio a ter todos 🤑" (131172 views in 13 days, 3273 likes, tags ['desafio dos 50 reais', 'technoblade', 'Technoblade', 'herobrine', 'Herobrine']). Trending in gaming: Rhino Decorations in Hay Day!; 🔴LIVE | AGE OF EMPIRES 2 | KONA X COCONUT X WINNIE | 1v7 VS #1 PLAYER IN THE WORLD | #BUNGULATE; Final Life: Episode 1 - HE'S BACK!; Hunting Down My Friends For Halloween; I Shouldn’t Have Taken This Detour…; Pikmin Day Direct; I Can Shapeshift Into MONSTERS to PRANK Villagers In Minecraft; 1000 Players Simulate Minecraft's Deadliest Containment Zone....
