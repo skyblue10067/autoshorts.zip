@@ -1,7 +1,7 @@
 name: quiz-short
 on:
   schedule:
-    - cron: "0 *,6 * * *"
+    - cron: "0 */6 * * *"
   workflow_dispatch:
 permissions:
   contents: write
@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: Auto
     env:
+      YT_KEY: ${{ secrets.YT_KEY }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       YT_ID: ${{ secrets.YT_ID }}
       YT_SECRET: ${{ secrets.YT_SECRET }}
