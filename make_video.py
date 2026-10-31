@@ -1,14 +1,19 @@
 """Quiz Shorts bot: AI writes + fact-checks a quiz, renders a 9:16 video with voice and sound.
 Reads (never edits or deletes) your channel stats and comments so the AI learns what works."""
-import json, os, sys, re, random, textwrap, subprocess, difflib, datetime, math, urllib.request, urllib.error, urllib.parse
+import json, os, sys, re, random, textwrap, subprocess, difflib, datetime, math, urllib.request, urllib.error, urllib.parse, socket, time, faulthandler
 from functools import lru_cache
 from PIL import Image, ImageDraw, ImageFont
 
+socket.setdefaulttimeout(30)            # no network call may wait forever
+try: sys.stdout.reconfigure(line_buffering=True)   # show log lines live in GitHub
+except Exception: pass
+AI_BUDGET_UNTIL = [time.time() + 360]   # all AI calls together may use at most 6 minutes
+TTS_TIMEOUT = 60
 W, H = 1080, 1920
 FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 CFG = json.load(open("config.json")) if os.path.exists("config.json") else {}
 LANG = CFG.get("language", "en")
-HOURS = int(CFG.get("hours", 6))   # how often a new quiz is posted (the schedule itself is in .github/workflows/daily.yml)
+HOURS = int(CFG.get("hours", 5))   # how often a new quiz is posted (the schedule itself is in .github/workflows/daily.yml)
 VOICES = {"en": "en-US-GuyNeural", "fr": "fr-FR-HenriNeural"}
 VOICE = CFG.get("voice", VOICES.get(LANG, VOICES["en"]))
 TXT = {
@@ -24,17 +29,27 @@ TXT = {
 T = TXT.get(LANG, TXT["en"])
 LET = "ABCD"
 TYPES = ["multiple_choice", "true_false", "riddle", "math", "odd_one_out", "clue_guess", "emoji_guess", "flag_guess"]
-GEN_MODELS = ["openai/gpt-4.1", "openai/gpt-4.1-mini", "deepseek/DeepSeek-V3-0324", "pollinations"]   # tries the next one if a model is busy
-VERIFIERS = ["deepseek/DeepSeek-V3-0324", "meta/Llama-3.3-70B-Instruct", "openai/gpt-4.1-mini", "pollinations"]
+PROVIDERS = {   # name: (address, name of the secret that holds its key)
+    "github": ("https://models.github.ai/inference/chat/completions", "GITHUB_TOKEN"),
+    "groq": ("https://api.groq.com/openai/v1/chat/completions", "GROQ_KEY"),
+    "gemini": ("https://generativelanguage.googleapis.com/v1beta/openai/chat/completions", "GEMINI_KEY"),
+    "openrouter": ("https://openrouter.ai/api/v1/chat/completions", "OPENROUTER_KEY")}
+WRITERS = ["gemini:gemini-2.5-flash", "groq:llama-3.3-70b-versatile", "github:openai/gpt-4.1", "github:openai/gpt-4.1-mini",
+           "openrouter:deepseek/deepseek-chat-v3-0324:free", "github:deepseek/DeepSeek-V3-0324", "pollinations"]
+CHECKERS = ["groq:llama-3.3-70b-versatile", "github:deepseek/DeepSeek-V3-0324", "gemini:gemini-2.5-flash", "github:openai/gpt-4.1-mini",
+            "openrouter:meta-llama/llama-3.3-70b-instruct:free", "pollinations"]
+def available(models): return [m for m in models if m == "pollinations" or os.environ.get(PROVIDERS[m.split(":")[0]][1])]
+GEN_MODELS, VERIFIERS = available(WRITERS), available(CHECKERS)   # only models whose key exists
 API = "https://models.github.ai/inference/chat/completions"
 
 _raw = json.load(open("history.json")) if os.path.exists("history.json") else []
 if isinstance(_raw, dict): HIST, PLAYBOOK, PLAYBOOK_AT = _raw.get("videos", []), _raw.get("playbook", ""), _raw.get("playbook_at", 0)
 else: HIST, PLAYBOOK, PLAYBOOK_AT = _raw, "", 0
+INTEL_SAVED, INTEL_AT = (_raw.get("intel", ""), _raw.get("intel_at", "")) if isinstance(_raw, dict) else ("", "")
 NEXT_NUM = (HIST[-1].get("n", len(HIST)) if HIST else 0) + 1
 
 def save_hist():
-    json.dump({"videos": HIST, "playbook": PLAYBOOK, "playbook_at": PLAYBOOK_AT}, open("history.json", "w"), indent=1)
+    json.dump({"videos": HIST, "playbook": PLAYBOOK, "playbook_at": PLAYBOOK_AT, "intel": INTEL, "intel_at": INTEL_AT}, open("history.json", "w"), indent=1)
 for i, h in enumerate(HIST):
     h.setdefault("n", i + 1); h.setdefault("type", "multiple_choice"); h.setdefault("title", "")
 COMMENTS = []
@@ -132,7 +147,11 @@ def iso_secs(d):
 def market_intel():
     """Reads PUBLIC stats of other quiz Shorts (titles, views, likes, tags) to see what is winning right now.
     It cannot watch them, but it can see which ones work and which flop, and the AI learns the patterns (never copies)."""
-    global INTEL
+    global INTEL, INTEL_AT
+    try:   # searches cost 100 quota units each, so look at other channels at most every 12 hours and reuse the last result in between
+        if INTEL_SAVED and INTEL_AT and (datetime.datetime.utcnow() - datetime.datetime.strptime(INTEL_AT, "%Y-%m-%dT%H:%M:%SZ")).total_seconds() < 12 * 3600:
+            INTEL = INTEL_SAVED; print("market intel reused (less than 12 hours old)"); return
+    except Exception: pass
     if YT is None: return
     try:
         vd, _ = verdicts()
@@ -158,7 +177,7 @@ def market_intel():
             tr = YT.videos().list(part="snippet", chart="mostPopular", videoCategoryId="20", regionCode=CFG.get("region", "US"), maxResults=10).execute()["items"]
             INTEL += " Trending in gaming: " + "; ".join(t["snippet"]["title"] for t in tr[:8]) + "."
         except Exception: pass
-        INTEL = INTEL[:2800]; print("market intel gathered from", len(rows), "videos")
+        INTEL = INTEL[:2800]; INTEL_AT = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"); print("market intel gathered from", len(rows), "videos")
     except Exception as e:
         print("market intel skipped:", str(e)[:150])
 
@@ -182,41 +201,52 @@ def call_pollinations(prompt, temp):
     except Exception as e:
         print("AI call failed: pollinations", str(e)[:150]); return None
 
-API_URLS = ["https://models.github.ai/inference/chat/completions", "https://models.inference.ai.azure.com/chat/completions"]
+def post_json(url, body, headers, timeout=45):
+    """POST with curl (what GitHub's docs use). Keeps the POST and the body if the address redirects."""
+    if shutil.which("curl"):
+        import tempfile
+        with tempfile.NamedTemporaryFile("wb", delete=False, suffix=".json") as f: f.write(body); path = f.name
+        cmd = ["curl", "-sS", "-L", "--post301", "--post302", "--post303", "-m", str(timeout), "-X", "POST", url, "--data-binary", "@" + path, "-w", "\n__HTTP__%{http_code}"]
+        for k, v in headers.items(): cmd += ["-H", f"{k}: {v}"]
+        try: out = subprocess.run(cmd, capture_output=True, timeout=timeout + 15).stdout.decode("utf-8", "replace")
+        except Exception as e: return 0, str(e), url
+        finally: os.unlink(path)
+        raw, _, code = out.rpartition("\n__HTTP__")
+        return int(code) if code.strip().isdigit() else 0, raw, url
+    req = urllib.request.Request(url, data=body, method="POST", headers=headers)
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as r: return r.status, r.read().decode("utf-8", "replace"), url
+    except urllib.error.HTTPError as e: return e.code, e.read().decode("utf-8", "replace"), url
+    except Exception as e: return 0, str(e), url
 
-class _NoRedirect(urllib.request.HTTPRedirectHandler):
-    def redirect_request(self, *a, **k): return None
-_opener = urllib.request.build_opener(_NoRedirect)
-
-def post_json(url, body, headers, hops=4):
-    """POST that follows redirects WITHOUT turning the POST into a GET (the default Python behaviour, which gave an empty 'OK')."""
-    for _ in range(hops):
-        req = urllib.request.Request(url, data=body, method="POST", headers=headers)
-        try:
-            with _opener.open(req, timeout=90) as r: return r.status, r.read().decode("utf-8", "replace"), url
-        except urllib.error.HTTPError as e:
-            if e.code in (301, 302, 303, 307, 308) and e.headers.get("Location"):
-                url = urllib.parse.urljoin(url, e.headers["Location"]); continue
-            return e.code, e.read().decode("utf-8", "replace"), url
-        except Exception as e:
-            return 0, str(e), url
-    return 0, "too many redirects", url
+_DIAG = [False]
+def ai_diagnostic(url, key):
+    """Once per run, when GitHub's AI fails: print GitHub's raw reply (headers + body) so the real cause is visible."""
+    if _DIAG[0] or not shutil.which("curl"): return
+    _DIAG[0] = True
+    try:
+        out = subprocess.run(["curl", "-sS", "-i", "-m", "30", "-X", "POST", url, "-H", "Authorization: Bearer " + key, "-H", "Content-Type: application/json",
+                              "-d", '{"model":"openai/gpt-4.1-mini","messages":[{"role":"user","content":"Say hi"}]}'], capture_output=True, timeout=45).stdout.decode("utf-8", "replace")
+        print("AI DIAGNOSTIC, raw reply from GitHub:", out[:900].replace(key, "***").replace("\n", " | "))
+    except Exception as e: print("diagnostic failed:", e)
 
 def call_ai(model, prompt, temp=0.7):
+    if time.time() > AI_BUDGET_UNTIL[0]:
+        print("AI time budget used up, skipping", model); return None
     if model == "pollinations": return call_pollinations(prompt, temp)
-    tok = os.environ.get("GITHUB_TOKEN")
-    if not tok:
-        print("AI skipped: no GITHUB_TOKEN"); return None
-    body = json.dumps({"model": model, "temperature": temp, "messages": [{"role": "user", "content": prompt}]}).encode()
-    headers = {"Authorization": "Bearer " + tok, "Content-Type": "application/json", "Accept": "application/vnd.github+json",
-               "X-GitHub-Api-Version": "2022-11-28", "User-Agent": "quiz-shorts-bot"}
-    for api in API_URLS:
-        status, raw, final = post_json(api, body, headers)
-        try:
-            return json.loads(raw)["choices"][0]["message"]["content"]
-        except Exception:
-            print("AI bad reply:", model, api.split("/")[2], "status", status, ("-> " + final) if final != api else "", "| body starts:", raw[:200].replace("\n", " "))
-    return None
+    prov, name = model.split(":", 1); url, keyenv = PROVIDERS[prov]; key = os.environ.get(keyenv)
+    if not key:
+        print("AI skipped:", model, "(no key)"); return None
+    body = json.dumps({"model": name, "temperature": temp, "messages": [{"role": "user", "content": prompt}]}).encode()
+    headers = {"Authorization": "Bearer " + key, "Content-Type": "application/json", "User-Agent": "quiz-shorts-bot"}
+    if prov == "github": headers.update({"Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28"})
+    status, raw, final = post_json(url, body, headers)
+    try:
+        return json.loads(raw)["choices"][0]["message"]["content"]
+    except Exception:
+        print("AI bad reply:", model, "status", status, "| body starts:", raw[:200].replace("\n", " "))
+        if prov == "github": ai_diagnostic(url, key)
+        return None
 
 def call_chain(models, prompt, temp=0.7):
     for m in models:
@@ -658,12 +688,22 @@ def synth_music(total):
 def tts(text, path):
     if os.environ.get("TEST_TTS"):
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "lavfi", "-i", f"sine=frequency=300:duration={max(0.8, len(text) * 0.055):.2f}:sample_rate=24000", "-f", "wav", path], check=True); return
-    subprocess.run(["edge-tts", "--voice", VOICE, "--rate=+8%", "--text", text, "--write-media", path], check=True)
+    for attempt in range(3):
+        try:
+            subprocess.run(["edge-tts", "--voice", VOICE, "--rate=+8%", "--text", text, "--write-media", path], check=True, timeout=TTS_TIMEOUT, capture_output=True)
+            if os.path.exists(path) and os.path.getsize(path) > 500: return
+        except Exception as e:
+            print(f"edge-tts attempt {attempt + 1} failed:", str(e)[:150])
+        time.sleep(2)
+    print("edge-tts is not answering, using the Google voice instead")
+    subprocess.run([sys.executable, "-m", "pip", "install", "-q", "gTTS"], check=True, timeout=120)
+    from gtts import gTTS
+    gTTS(text, lang=LANG).save(path)
 
 def dur(path):
-    return float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", path]).decode().strip())
+    return float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", path], timeout=60).decode().strip())
 
-def sh(*a): subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *a], check=True)
+def sh(*a): subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *a], check=True, timeout=600)
 
 def scaled(spr, s):
     return spr.resize((max(1, int(spr.width * s)), max(1, int(spr.height * s))), Image.LANCZOS)
@@ -819,6 +859,7 @@ def make_video(q, num):
 
 # ---------------------------------------------------------------- main
 if __name__ == "__main__":
+    faulthandler.dump_traceback_later(900, exit=True)
     sync_channel()
     market_intel()
     maybe_update_playbook()
