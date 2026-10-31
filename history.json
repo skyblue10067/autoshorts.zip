@@ -1,77 +1,100 @@
-[
- {
-  "n": 1,
-  "hook": "Which is the largest country in Africa by area?",
-  "type": "multiple_choice",
-  "format": "multiple_choice/geography",
-  "difficulty": "",
-  "title": "Can you get this right? Which is the largest country in Africa by area?",
-  "id": "uq6s7Woa5ZA",
-  "views": 8,
-  "likes": 0
- },
- {
-  "n": 2,
-  "hook": "Which country won the 2022 World Cup?",
-  "type": "multiple_choice",
-  "format": "multiple_choice/football",
-  "difficulty": "",
-  "title": "Can you get this right? Which country won the 2022 World Cup?",
-  "id": "wRD6nH_mK-o",
-  "views": 6,
-  "likes": 0
- },
- {
-  "n": 3,
-  "hook": "Which planet is closest to the sun?",
-  "type": "multiple_choice",
-  "format": "multiple_choice/science",
-  "difficulty": "",
-  "title": "Can you get this right? Which planet is closest to the sun?",
-  "id": "T2HAv71MGsI",
-  "views": 5,
-  "likes": 0
- },
- {
-  "n": 4,
-  "hook": "How many continents are there?",
-  "type": "multiple_choice",
-  "format": "multiple_choice/general",
-  "difficulty": "",
-  "title": "Can you get this right? How many continents are there?",
-  "id": "1Uu7ECxERLA",
-  "views": 7,
-  "likes": 0
- },
- {
-  "n": 5,
-  "hook": "What do you need to make a Nether portal?",
-  "type": "multiple_choice",
-  "format": "multiple_choice/minecraft",
-  "difficulty": "",
-  "title": "Can you get this right? What do you need to make a Nether portal?",
-  "id": "S2nayWIjTRw",
-  "views": 769,
-  "likes": 11
- },
- {
-  "n": 6,
-  "hook": "What gas do plants take in from the air?",
-  "type": "multiple_choice",
-  "format": "multiple_choice/science",
-  "difficulty": "",
-  "title": "Can you get this right? What gas do plants take in from the air?",
-  "id": "Vml8ecoD27c",
-  "views": 4,
-  "likes": 0
- },
- {
-  "n": 7,
-  "hook": "What is the capital city of Cameroon?",
-  "type": "multiple_choice",
-  "format": "multiple_choice/geography",
-  "difficulty": "",
-  "title": "Can you get this right? What is the capital city of Cameroon?",
-  "id": null
- }
-]
+{
+ "videos": [
+  {
+   "n": 1,
+   "hook": "Which is the largest country in Africa by area?",
+   "type": "multiple_choice",
+   "format": "multiple_choice/geography",
+   "difficulty": "",
+   "title": "Can you get this right? Which is the largest country in Africa by area?",
+   "id": "uq6s7Woa5ZA",
+   "views": 8,
+   "likes": 0,
+   "published": "2026-10-28T04:06:22Z"
+  },
+  {
+   "n": 2,
+   "hook": "Which country won the 2022 World Cup?",
+   "type": "multiple_choice",
+   "format": "multiple_choice/football",
+   "difficulty": "",
+   "title": "Can you get this right? Which country won the 2022 World Cup?",
+   "id": "wRD6nH_mK-o",
+   "views": 6,
+   "likes": 0,
+   "published": "2026-10-28T04:54:40Z"
+  },
+  {
+   "n": 3,
+   "hook": "Which planet is closest to the sun?",
+   "type": "multiple_choice",
+   "format": "multiple_choice/science",
+   "difficulty": "",
+   "title": "Can you get this right? Which planet is closest to the sun?",
+   "id": "T2HAv71MGsI",
+   "views": 5,
+   "likes": 0,
+   "published": "2026-10-28T12:37:00Z"
+  },
+  {
+   "n": 4,
+   "hook": "How many continents are there?",
+   "type": "multiple_choice",
+   "format": "multiple_choice/general",
+   "difficulty": "",
+   "title": "Can you get this right? How many continents are there?",
+   "id": "1Uu7ECxERLA",
+   "views": 8,
+   "likes": 0,
+   "published": "2026-10-28T22:28:04Z"
+  },
+  {
+   "n": 5,
+   "hook": "What do you need to make a Nether portal?",
+   "type": "multiple_choice",
+   "format": "multiple_choice/minecraft",
+   "difficulty": "",
+   "title": "Can you get this right? What do you need to make a Nether portal?",
+   "id": "S2nayWIjTRw",
+   "views": 823,
+   "likes": 12,
+   "published": "2026-10-29T22:40:58Z"
+  },
+  {
+   "n": 6,
+   "hook": "What gas do plants take in from the air?",
+   "type": "multiple_choice",
+   "format": "multiple_choice/science",
+   "difficulty": "",
+   "title": "Can you get this right? What gas do plants take in from the air?",
+   "id": "Vml8ecoD27c",
+   "views": 678,
+   "likes": 32,
+   "published": "2026-10-30T08:40:33Z"
+  },
+  {
+   "n": 7,
+   "hook": "What is the capital city of Cameroon?",
+   "type": "multiple_choice",
+   "format": "multiple_choice/geography",
+   "difficulty": "",
+   "title": "Can you get this right? What is the capital city of Cameroon?",
+   "id": "FN2esuaomao",
+   "views": 465,
+   "likes": 11,
+   "published": "2026-10-30T22:11:21Z"
+  },
+  {
+   "n": 8,
+   "hook": "Quick maths: what is 509 plus 837?",
+   "type": "math",
+   "emoji": "",
+   "format": "math/general",
+   "difficulty": "easy",
+   "title": "Can you solve this in 5 seconds?",
+   "id": null
+  }
+ ],
+ "playbook": "1. Focus on moderately challenging questions; avoid overly obvious trivia that yields 0 likes.  \n2. Prioritize niche categories such as gaming, science, and geography over generic general\u2011knowledge topics.  \n3. Use a \u201cGuess\u201d or \u201cWhat\u201d hook that invites a quick answer and add a playful twist (e.g., reversed names, hidden clues).  \n4. Keep titles concise, question\u2011style, and include a single, relevant hashtag set; do not copy any other channel\u2019s exact phrasing.  \n5. Start the video with a 2\u2011second hook that teases the answer or a surprising fact to capture attention instantly.  \n6. Add a short, relevant hashtag list (e.g., #Minecraft, #ScienceFacts, #GeographyQuiz) but keep it concise.  \n7. Avoid broad, trivial questions like \u201cHow many continents are there?\u201d; instead ask for specific facts or lesser\u2011known details.  \n8. Experiment with reversed or reverse\u2011quiz formats, as they consistently show higher engagement in top channels.",
+ "playbook_at": 7
+}
