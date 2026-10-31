@@ -56,7 +56,7 @@
    "difficulty": "",
    "title": "Can you get this right? What do you need to make a Nether portal?",
    "id": "S2nayWIjTRw",
-   "views": 975,
+   "views": 977,
    "likes": 13,
    "published": "2026-10-29T22:40:58Z"
   },
@@ -68,7 +68,7 @@
    "difficulty": "",
    "title": "Can you get this right? What gas do plants take in from the air?",
    "id": "Vml8ecoD27c",
-   "views": 827,
+   "views": 821,
    "likes": 36,
    "published": "2026-10-30T08:40:33Z",
    "disputed": true
@@ -81,8 +81,8 @@
    "difficulty": "",
    "title": "Can you get this right? What is the capital city of Cameroon?",
    "id": "FN2esuaomao",
-   "views": 679,
-   "likes": 16,
+   "views": 686,
+   "likes": 15,
    "published": "2026-10-30T22:11:21Z"
   },
   {
@@ -94,7 +94,7 @@
    "difficulty": "easy",
    "title": "Can you solve this in 5 seconds?",
    "id": "vgyStrrEiMA",
-   "views": 648,
+   "views": 659,
    "likes": 10,
    "published": "2026-10-31T02:26:07Z"
   },
@@ -120,8 +120,8 @@
    "difficulty": "easy",
    "title": "Do you know the capital of Zimbabwe?",
    "id": "IUnLkBnUO90",
-   "views": 745,
-   "likes": 5,
+   "views": 755,
+   "likes": 4,
    "published": "2026-10-31T13:05:47Z"
   },
   {
@@ -132,11 +132,24 @@
    "format": "math/general",
    "difficulty": "easy",
    "title": "Can you solve this in 5 seconds?",
+   "id": "uzfex2HTmb4",
+   "views": 2,
+   "likes": 0,
+   "published": "2026-10-31T18:54:08Z"
+  },
+  {
+   "n": 12,
+   "hook": "Which country's flag is this?",
+   "type": "flag_guess",
+   "emoji": "\ud83c\uddf9\ud83c\udded",
+   "format": "flag_guess/geography",
+   "difficulty": "medium",
+   "title": "Can you name this flag? \ud83c\uddf9\ud83c\udded",
    "id": null
   }
  ],
- "playbook": "1. Focus on moderately challenging questions; avoid overly obvious trivia that yields 0 likes.  \n2. Prioritize niche categories such as gaming, science, and geography over generic general\u2011knowledge topics.  \n3. Use a \u201cGuess\u201d or \u201cWhat\u201d hook that invites a quick answer and add a playful twist (e.g., reversed names, hidden clues).  \n4. Keep titles concise, question\u2011style, and include a single, relevant hashtag set; do not copy any other channel\u2019s exact phrasing.  \n5. Start the video with a 2\u2011second hook that teases the answer or a surprising fact to capture attention instantly.  \n6. Add a short, relevant hashtag list (e.g., #Minecraft, #ScienceFacts, #GeographyQuiz) but keep it concise.  \n7. Avoid broad, trivial questions like \u201cHow many continents are there?\u201d; instead ask for specific facts or lesser\u2011known details.  \n8. Experiment with reversed or reverse\u2011quiz formats, as they consistently show higher engagement in top channels.",
- "playbook_at": 7,
+ "playbook": "1. Prioritize geography, science, math, and gaming (especially Minecraft) over generic general\u2011knowledge or flag\u2011guessing questions.  \n2. Keep difficulty moderate\u2014easy questions that still need a quick, non\u2011obvious answer perform best.  \n3. Hook viewers with \u201cGuess\u201d, \u201cWhat\u201d, or \u201cReverse\u201d prompts that invite a fast answer and add a playful twist.  \n4. Avoid broad, trivial questions (e.g., \u201cHow many continents are there?\u201d) and overly obvious sports queries.  \n5. Title each short as a concise question, no more than 6\u20138 words, and use a single, relevant hashtag set.  \n6. Open the video with a 2\u2011second hook that teases a surprising fact or twist to capture attention instantly.  \n7. Keep the hashtag list short (1\u20133 tags) and specific to the content (e.g., #Minecraft, #ScienceFacts, #GeographyQuiz).  \n8. Never copy another channel\u2019s exact title or question wording; craft unique phrasing while following the above guidelines.",
+ "playbook_at": 11,
  "intel": "Top quiz Shorts on YouTube right now: \"Guess TMKOC music \ud83c\udfb5\ud83d\ude02 #ytshorts #comedy #funny #tmkoc #siblings #shorts #viral #challenge #quiz\" (1187205 views in 2 days, 0 likes, tags []); \"I can guess your father\u2019s Name#challenge #quiz #shorts\" (813045 views in 2 days, 0 likes, tags ['Facts', 'Fact', 'Quiz', 'Reaction', 'Challenge']); \"Can You Name These 10 Luxury Car Brands? \ud83c\udfce\ufe0f\ud83d\udd25 (The Last One Is Impossible!) #shorts #quiz\" (592145 views in 1 days, 0 likes, tags ['car quiz', 'guess the car brand', 'luxury car brands quiz', 'supercars quiz', 'the last one is impossible']); \"Qual Clube o Neymar Segue?\" (1286687 views in 3 days, 30896 likes, tags []); \"Sejal Gaba Hide & Seek Challenge\ud83e\udd76! #ytshorts #facts #quiz\" (3825164 views in 11 days, 58609 likes, tags []); \"GUESS THE REVERSED FOOTBALLER\u2019S NAME \ud83d\udd04 #football #soccer #shorts\" (1578948 views in 6 days, 47991 likes, tags ['front three', 'football podcast', 'premier league', 'champions league', 'soccer']); \"GUESSING THE REVERSED FOOTBALLER NAME \ud83e\udd23  #football #soccer #shorts\" (762437 views in 5 days, 19442 likes, tags ['front three', 'football podcast', 'premier league', 'champions league', 'soccer']); \"Papa vs Ramayan Quiz: 5/5 milenge ya nahi? \ud83c\udff9 #challenge #shorts #family\" (1289546 views in 9 days, 17148 likes, tags ['Ancient India', 'Epic Facts', 'Epic Quiz', 'Hindu Quiz', 'Hinduism Facts']). Weak ones in the same niche: \"Os mobs v\u00e3o destruir o mundo \ud83d\ude2d\" (118076 views in 9 days, 1186 likes, tags ['minecraft na vida real', 'Minecraft Na Vida Real', 'totem da imortalidade', 'Totem Da Imortalidade', 'Spawnar Mobs']); \"DRDONUT $100B TRUST TEST WITH FAREX #shorts #minecraft  #drdonutt\" (83453 views in 6 days, 637 likes, tags ['minecraft', 'drdonutt', 'dr donut', 'dr donut clips', 'dr donut shorts']); \"Te desafio a ter todos \ud83e\udd11\" (131172 views in 13 days, 3273 likes, tags ['desafio dos 50 reais', 'technoblade', 'Technoblade', 'herobrine', 'Herobrine']). Trending in gaming: Rhino Decorations in Hay Day!; \ud83d\udd34LIVE | AGE OF EMPIRES 2 | KONA X COCONUT X WINNIE | 1v7 VS #1 PLAYER IN THE WORLD | #BUNGULATE; Final Life: Episode 1 - HE'S BACK!; Hunting Down My Friends For Halloween; I Shouldn\u2019t Have Taken This Detour\u2026; Pikmin Day Direct; I Can Shapeshift Into MONSTERS to PRANK Villagers In Minecraft; 1000 Players Simulate Minecraft's Deadliest Containment Zone....",
  "intel_at": "2026-10-31T18:52:45Z"
 }

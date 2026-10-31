@@ -1,20 +1,21 @@
 # Channel report
 
-Typical video: 529.3 views/day
+Typical video: 3.5 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
-| - | - | - | - | math/general | Quick maths: what is 813 minus 390? |
-| OK | 745 | - | 5 | multiple_choice/geography | What is the capital of Zimbabwe? |
-| WEAK | 2 | - | 0 | flag_guess/geography | Which country's flag is this? |
-| OK | 648 | - | 10 | math/general | Quick maths: what is 509 plus 837? |
-| OK | 679 | - | 16 | multiple_choice/geography | What is the capital city of Cameroon? |
-| OK | 827 | - | 36 | multiple_choice/science | What gas do plants take in from the air? |
-| OK | 975 | - | 13 | multiple_choice/minecraft | What do you need to make a Nether portal? |
-| WEAK | 10 | - | 0 | multiple_choice/general | How many continents are there? |
+| - | - | - | - | flag_guess/geography | Which country's flag is this? |
+| OK | 2 | - | 0 | math/general | Quick maths: what is 813 minus 390? |
+| GOOD | 755 | - | 4 | multiple_choice/geography | What is the capital of Zimbabwe? |
+| OK | 2 | - | 0 | flag_guess/geography | Which country's flag is this? |
+| GOOD | 659 | - | 10 | math/general | Quick maths: what is 509 plus 837? |
+| GOOD | 686 | - | 15 | multiple_choice/geography | What is the capital city of Cameroon? |
+| GOOD | 821 | - | 36 | multiple_choice/science | What gas do plants take in from the air? |
+| GOOD | 977 | - | 13 | multiple_choice/minecraft | What do you need to make a Nether portal? |
+| OK | 10 | - | 0 | multiple_choice/general | How many continents are there? |
 | WEAK | 5 | - | 0 | multiple_choice/science | Which planet is closest to the sun? |
 | WEAK | 6 | - | 0 | multiple_choice/football | Which country won the 2022 World Cup? |
-| WEAK | 8 | - | 0 | multiple_choice/geography | Which is the largest country in Africa by area? |
+| OK | 8 | - | 0 | multiple_choice/geography | Which is the largest country in Africa by area? |
 
 ## Latest comments
 
@@ -34,14 +35,14 @@ Typical video: 529.3 views/day
 
 ## Playbook (what the AI has learned)
 
-1. Focus on moderately challenging questions; avoid overly obvious trivia that yields 0 likes.  
-2. Prioritize niche categories such as gaming, science, and geography over generic general‑knowledge topics.  
-3. Use a “Guess” or “What” hook that invites a quick answer and add a playful twist (e.g., reversed names, hidden clues).  
-4. Keep titles concise, question‑style, and include a single, relevant hashtag set; do not copy any other channel’s exact phrasing.  
-5. Start the video with a 2‑second hook that teases the answer or a surprising fact to capture attention instantly.  
-6. Add a short, relevant hashtag list (e.g., #Minecraft, #ScienceFacts, #GeographyQuiz) but keep it concise.  
-7. Avoid broad, trivial questions like “How many continents are there?”; instead ask for specific facts or lesser‑known details.  
-8. Experiment with reversed or reverse‑quiz formats, as they consistently show higher engagement in top channels.
+1. Prioritize geography, science, math, and gaming (especially Minecraft) over generic general‑knowledge or flag‑guessing questions.  
+2. Keep difficulty moderate—easy questions that still need a quick, non‑obvious answer perform best.  
+3. Hook viewers with “Guess”, “What”, or “Reverse” prompts that invite a fast answer and add a playful twist.  
+4. Avoid broad, trivial questions (e.g., “How many continents are there?”) and overly obvious sports queries.  
+5. Title each short as a concise question, no more than 6–8 words, and use a single, relevant hashtag set.  
+6. Open the video with a 2‑second hook that teases a surprising fact or twist to capture attention instantly.  
+7. Keep the hashtag list short (1–3 tags) and specific to the content (e.g., #Minecraft, #ScienceFacts, #GeographyQuiz).  
+8. Never copy another channel’s exact title or question wording; craft unique phrasing while following the above guidelines.
 
 ## What other quiz channels are doing
 
