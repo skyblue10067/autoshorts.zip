@@ -6,10 +6,13 @@ on:
 permissions:
   contents: write
   models: read
-concurrency: quiz-short
+concurrency:
+  group: quiz-short
+  cancel-in-progress: true
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     environment: Auto
     env:
       YT_KEY: ${{ secrets.YT_KEY }}
