@@ -1,18 +1,19 @@
 # Channel report
 
-Typical video: 3.5 views/day
+Typical video: 3.6 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
-| - | - | - | - | flag_guess/geography | Which country's flag is this? |
+| - | - | - | - | multiple_choice/geography | What is the capital of Libya? |
+| WEAK | 0 | - | 0 | flag_guess/geography | Which country's flag is this? |
 | OK | 2 | - | 0 | math/general | Quick maths: what is 813 minus 390? |
-| GOOD | 755 | - | 4 | multiple_choice/geography | What is the capital of Zimbabwe? |
-| OK | 2 | - | 0 | flag_guess/geography | Which country's flag is this? |
-| GOOD | 659 | - | 10 | math/general | Quick maths: what is 509 plus 837? |
-| GOOD | 686 | - | 15 | multiple_choice/geography | What is the capital city of Cameroon? |
-| GOOD | 821 | - | 36 | multiple_choice/science | What gas do plants take in from the air? |
-| GOOD | 977 | - | 13 | multiple_choice/minecraft | What do you need to make a Nether portal? |
-| OK | 10 | - | 0 | multiple_choice/general | How many continents are there? |
+| GOOD | 792 | - | 4 | multiple_choice/geography | What is the capital of Zimbabwe? |
+| OK | 3 | - | 0 | flag_guess/geography | Which country's flag is this? |
+| GOOD | 653 | - | 10 | math/general | Quick maths: what is 509 plus 837? |
+| GOOD | 695 | - | 16 | multiple_choice/geography | What is the capital city of Cameroon? |
+| GOOD | 837 | - | 36 | multiple_choice/science | What gas do plants take in from the air? |
+| GOOD | 994 | - | 13 | multiple_choice/minecraft | What do you need to make a Nether portal? |
+| OK | 11 | - | 0 | multiple_choice/general | How many continents are there? |
 | WEAK | 5 | - | 0 | multiple_choice/science | Which planet is closest to the sun? |
 | WEAK | 6 | - | 0 | multiple_choice/football | Which country won the 2022 World Cup? |
 | OK | 8 | - | 0 | multiple_choice/geography | Which is the largest country in Africa by area? |
