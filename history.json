@@ -44,7 +44,7 @@
    "difficulty": "",
    "title": "Can you get this right? How many continents are there?",
    "id": "1Uu7ECxERLA",
-   "views": 8,
+   "views": 9,
    "likes": 0,
    "published": "2026-10-28T22:28:04Z"
   },
@@ -56,7 +56,7 @@
    "difficulty": "",
    "title": "Can you get this right? What do you need to make a Nether portal?",
    "id": "S2nayWIjTRw",
-   "views": 823,
+   "views": 864,
    "likes": 12,
    "published": "2026-10-29T22:40:58Z"
   },
@@ -68,9 +68,10 @@
    "difficulty": "",
    "title": "Can you get this right? What gas do plants take in from the air?",
    "id": "Vml8ecoD27c",
-   "views": 678,
-   "likes": 32,
-   "published": "2026-10-30T08:40:33Z"
+   "views": 781,
+   "likes": 35,
+   "published": "2026-10-30T08:40:33Z",
+   "disputed": true
   },
   {
    "n": 7,
@@ -80,8 +81,8 @@
    "difficulty": "",
    "title": "Can you get this right? What is the capital city of Cameroon?",
    "id": "FN2esuaomao",
-   "views": 465,
-   "likes": 11,
+   "views": 641,
+   "likes": 13,
    "published": "2026-10-30T22:11:21Z"
   },
   {
@@ -92,6 +93,19 @@
    "format": "math/general",
    "difficulty": "easy",
    "title": "Can you solve this in 5 seconds?",
+   "id": "vgyStrrEiMA",
+   "views": 516,
+   "likes": 9,
+   "published": "2026-10-31T02:26:07Z"
+  },
+  {
+   "n": 9,
+   "hook": "Which country's flag is this?",
+   "type": "flag_guess",
+   "emoji": "\ud83c\uddee\ud83c\udde9",
+   "format": "flag_guess/geography",
+   "difficulty": "medium",
+   "title": "Can you name this flag? \ud83c\uddee\ud83c\udde9",
    "id": null
   }
  ],
