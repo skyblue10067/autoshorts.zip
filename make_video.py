@@ -1,6 +1,6 @@
 """Quiz Shorts bot: AI writes + fact-checks a quiz, renders a 9:16 video with voice and sound.
 Reads (never edits or deletes) your channel stats and comments so the AI learns what works."""
-import json, os, sys, re, random, textwrap, subprocess, difflib, datetime, math, urllib.request, urllib.error
+import json, os, sys, re, random, textwrap, subprocess, difflib, datetime, math, urllib.request, urllib.error, urllib.parse
 from functools import lru_cache
 from PIL import Image, ImageDraw, ImageFont
 
@@ -64,16 +64,18 @@ def sync_channel():
                 if f"[q{h['n']}]" in v["snippet"].get("description", ""):
                     st = v["statistics"]
                     h.update(id=v["id"], views=int(st.get("viewCount", 0)), likes=int(st.get("likeCount", 0)), published=v["snippet"].get("publishedAt", ""))
-        for h in [h for h in HIST if h.get("id")][-8:]:
+        ycom = build("youtube", "v3", developerKey=os.environ["YT_KEY"]) if os.environ.get("YT_KEY") else None
+        if ycom is None: print("comments skipped: add the free YT_KEY secret (a YouTube API key) so the bot can read comments")
+        for h in ([h for h in HIST if h.get("id")][-8:] if ycom else []):
             try:
-                r = yt.commentThreads().list(part="snippet", videoId=h["id"], maxResults=15, order="relevance").execute()
+                r = ycom.commentThreads().list(part="snippet", videoId=h["id"], maxResults=15, order="relevance").execute()
                 for t in r["items"]:
                     txt = t["snippet"]["topLevelComment"]["snippet"]["textDisplay"][:300]
                     COMMENTS.append((h["hook"], txt[:200]))
                     if len(txt) > 25 and DISPUTE_RE.search(txt):
                         h["disputed"] = True; DISPUTED.append((h["hook"], txt[:160]))
             except Exception as e:
-                print("comments skipped:", e)
+                print("comments skipped:", str(e)[:150]); break
         try:  # optional: watch-time retention (needs the analytics read permission; skipped if absent)
             ids = [h["id"] for h in HIST if h.get("id")][-50:]
             ya = build("youtubeAnalytics", "v2", credentials=c)
@@ -180,26 +182,41 @@ def call_pollinations(prompt, temp):
     except Exception as e:
         print("AI call failed: pollinations", str(e)[:150]); return None
 
+API_URLS = ["https://models.github.ai/inference/chat/completions", "https://models.inference.ai.azure.com/chat/completions"]
+
+class _NoRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, *a, **k): return None
+_opener = urllib.request.build_opener(_NoRedirect)
+
+def post_json(url, body, headers, hops=4):
+    """POST that follows redirects WITHOUT turning the POST into a GET (the default Python behaviour, which gave an empty 'OK')."""
+    for _ in range(hops):
+        req = urllib.request.Request(url, data=body, method="POST", headers=headers)
+        try:
+            with _opener.open(req, timeout=90) as r: return r.status, r.read().decode("utf-8", "replace"), url
+        except urllib.error.HTTPError as e:
+            if e.code in (301, 302, 303, 307, 308) and e.headers.get("Location"):
+                url = urllib.parse.urljoin(url, e.headers["Location"]); continue
+            return e.code, e.read().decode("utf-8", "replace"), url
+        except Exception as e:
+            return 0, str(e), url
+    return 0, "too many redirects", url
+
 def call_ai(model, prompt, temp=0.7):
     if model == "pollinations": return call_pollinations(prompt, temp)
     tok = os.environ.get("GITHUB_TOKEN")
     if not tok:
         print("AI skipped: no GITHUB_TOKEN"); return None
     body = json.dumps({"model": model, "temperature": temp, "messages": [{"role": "user", "content": prompt}]}).encode()
-    req = urllib.request.Request(API, data=body, method="POST", headers={
-        "Authorization": "Bearer " + tok, "Content-Type": "application/json",
-        "Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28", "User-Agent": "quiz-shorts-bot"})
-    try:
-        with urllib.request.urlopen(req, timeout=90) as r:
-            status, raw = r.status, r.read().decode("utf-8", "replace")
-    except urllib.error.HTTPError as e:
-        print("AI HTTP error:", model, e.code, e.read().decode("utf-8", "replace")[:300]); return None
-    except Exception as e:
-        print("AI call failed:", model, str(e)[:150]); return None
-    try:
-        return json.loads(raw)["choices"][0]["message"]["content"]
-    except Exception:
-        print("AI bad reply:", model, "status", status, "body starts:", raw[:300]); return None
+    headers = {"Authorization": "Bearer " + tok, "Content-Type": "application/json", "Accept": "application/vnd.github+json",
+               "X-GitHub-Api-Version": "2022-11-28", "User-Agent": "quiz-shorts-bot"}
+    for api in API_URLS:
+        status, raw, final = post_json(api, body, headers)
+        try:
+            return json.loads(raw)["choices"][0]["message"]["content"]
+        except Exception:
+            print("AI bad reply:", model, api.split("/")[2], "status", status, ("-> " + final) if final != api else "", "| body starts:", raw[:200].replace("\n", " "))
+    return None
 
 def call_chain(models, prompt, temp=0.7):
     for m in models:
