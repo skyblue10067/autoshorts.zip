@@ -8,7 +8,7 @@
    "difficulty": "",
    "title": "Can you get this right? Which is the largest country in Africa by area?",
    "id": "uq6s7Woa5ZA",
-   "views": 8,
+   "views": 9,
    "likes": 0,
    "published": "2026-10-28T04:06:22Z"
   },
@@ -20,7 +20,7 @@
    "difficulty": "",
    "title": "Can you get this right? Which country won the 2022 World Cup?",
    "id": "wRD6nH_mK-o",
-   "views": 6,
+   "views": 7,
    "likes": 0,
    "published": "2026-10-28T04:54:40Z"
   },
@@ -32,7 +32,7 @@
    "difficulty": "",
    "title": "Can you get this right? Which planet is closest to the sun?",
    "id": "T2HAv71MGsI",
-   "views": 5,
+   "views": 6,
    "likes": 0,
    "published": "2026-10-28T12:37:00Z"
   },
@@ -44,7 +44,7 @@
    "difficulty": "",
    "title": "Can you get this right? How many continents are there?",
    "id": "1Uu7ECxERLA",
-   "views": 11,
+   "views": 15,
    "likes": 0,
    "published": "2026-10-28T22:28:04Z"
   },
@@ -56,8 +56,8 @@
    "difficulty": "",
    "title": "Can you get this right? What do you need to make a Nether portal?",
    "id": "S2nayWIjTRw",
-   "views": 1004,
-   "likes": 13,
+   "views": 1008,
+   "likes": 14,
    "published": "2026-10-29T22:40:58Z"
   },
   {
@@ -68,8 +68,8 @@
    "difficulty": "",
    "title": "Can you get this right? What gas do plants take in from the air?",
    "id": "Vml8ecoD27c",
-   "views": 874,
-   "likes": 37,
+   "views": 892,
+   "likes": 38,
    "published": "2026-10-30T08:40:33Z",
    "disputed": true
   },
@@ -81,8 +81,8 @@
    "difficulty": "",
    "title": "Can you get this right? What is the capital city of Cameroon?",
    "id": "FN2esuaomao",
-   "views": 741,
-   "likes": 19,
+   "views": 768,
+   "likes": 21,
    "published": "2026-10-30T22:11:21Z"
   },
   {
@@ -94,8 +94,8 @@
    "difficulty": "easy",
    "title": "Can you solve this in 5 seconds?",
    "id": "vgyStrrEiMA",
-   "views": 656,
-   "likes": 10,
+   "views": 681,
+   "likes": 11,
    "published": "2026-10-31T02:26:07Z"
   },
   {
@@ -120,7 +120,7 @@
    "difficulty": "easy",
    "title": "Do you know the capital of Zimbabwe?",
    "id": "IUnLkBnUO90",
-   "views": 808,
+   "views": 828,
    "likes": 4,
    "published": "2026-10-31T13:05:47Z"
   },
@@ -184,11 +184,24 @@
    "format": "multiple_choice/geography",
    "difficulty": "medium",
    "title": "Do you know the capital of Chile?",
+   "id": "A68IQfRc4iU",
+   "views": 404,
+   "likes": 14,
+   "published": "2026-11-01T04:54:52Z"
+  },
+  {
+   "n": 16,
+   "hook": "Kingston is the capital of which country?",
+   "type": "multiple_choice",
+   "emoji": "",
+   "format": "multiple_choice/geography",
+   "difficulty": "medium",
+   "title": "Which country has Kingston as its capital?",
    "id": null
   }
  ],
- "playbook": "1. Prioritize geography, science, math, and gaming (especially Minecraft) over generic general\u2011knowledge or flag\u2011guessing questions.  \n2. Keep difficulty moderate\u2014easy questions that still need a quick, non\u2011obvious answer perform best.  \n3. Hook viewers with \u201cGuess\u201d, \u201cWhat\u201d, or \u201cReverse\u201d prompts that invite a fast answer and add a playful twist.  \n4. Avoid broad, trivial questions (e.g., \u201cHow many continents are there?\u201d) and overly obvious sports queries.  \n5. Title each short as a concise question, no more than 6\u20138 words, and use a single, relevant hashtag set.  \n6. Open the video with a 2\u2011second hook that teases a surprising fact or twist to capture attention instantly.  \n7. Keep the hashtag list short (1\u20133 tags) and specific to the content (e.g., #Minecraft, #ScienceFacts, #GeographyQuiz).  \n8. Never copy another channel\u2019s exact title or question wording; craft unique phrasing while following the above guidelines.",
- "playbook_at": 11,
- "intel": "Top quiz Shorts on YouTube right now: \"Guess TMKOC music \ud83c\udfb5\ud83d\ude02 #ytshorts #comedy #funny #tmkoc #siblings #shorts #viral #challenge #quiz\" (1187205 views in 2 days, 0 likes, tags []); \"I can guess your father\u2019s Name#challenge #quiz #shorts\" (813045 views in 2 days, 0 likes, tags ['Facts', 'Fact', 'Quiz', 'Reaction', 'Challenge']); \"Can You Name These 10 Luxury Car Brands? \ud83c\udfce\ufe0f\ud83d\udd25 (The Last One Is Impossible!) #shorts #quiz\" (592145 views in 1 days, 0 likes, tags ['car quiz', 'guess the car brand', 'luxury car brands quiz', 'supercars quiz', 'the last one is impossible']); \"Qual Clube o Neymar Segue?\" (1286687 views in 3 days, 30896 likes, tags []); \"Sejal Gaba Hide & Seek Challenge\ud83e\udd76! #ytshorts #facts #quiz\" (3825164 views in 11 days, 58609 likes, tags []); \"GUESS THE REVERSED FOOTBALLER\u2019S NAME \ud83d\udd04 #football #soccer #shorts\" (1578948 views in 6 days, 47991 likes, tags ['front three', 'football podcast', 'premier league', 'champions league', 'soccer']); \"GUESSING THE REVERSED FOOTBALLER NAME \ud83e\udd23  #football #soccer #shorts\" (762437 views in 5 days, 19442 likes, tags ['front three', 'football podcast', 'premier league', 'champions league', 'soccer']); \"Papa vs Ramayan Quiz: 5/5 milenge ya nahi? \ud83c\udff9 #challenge #shorts #family\" (1289546 views in 9 days, 17148 likes, tags ['Ancient India', 'Epic Facts', 'Epic Quiz', 'Hindu Quiz', 'Hinduism Facts']). Weak ones in the same niche: \"Os mobs v\u00e3o destruir o mundo \ud83d\ude2d\" (118076 views in 9 days, 1186 likes, tags ['minecraft na vida real', 'Minecraft Na Vida Real', 'totem da imortalidade', 'Totem Da Imortalidade', 'Spawnar Mobs']); \"DRDONUT $100B TRUST TEST WITH FAREX #shorts #minecraft  #drdonutt\" (83453 views in 6 days, 637 likes, tags ['minecraft', 'drdonutt', 'dr donut', 'dr donut clips', 'dr donut shorts']); \"Te desafio a ter todos \ud83e\udd11\" (131172 views in 13 days, 3273 likes, tags ['desafio dos 50 reais', 'technoblade', 'Technoblade', 'herobrine', 'Herobrine']). Trending in gaming: Rhino Decorations in Hay Day!; \ud83d\udd34LIVE | AGE OF EMPIRES 2 | KONA X COCONUT X WINNIE | 1v7 VS #1 PLAYER IN THE WORLD | #BUNGULATE; Final Life: Episode 1 - HE'S BACK!; Hunting Down My Friends For Halloween; I Shouldn\u2019t Have Taken This Detour\u2026; Pikmin Day Direct; I Can Shapeshift Into MONSTERS to PRANK Villagers In Minecraft; 1000 Players Simulate Minecraft's Deadliest Containment Zone....",
- "intel_at": "2026-10-31T18:52:45Z"
+ "playbook": "1. Prioritize geography, science, math, and Minecraft quizzes; skip generic general\u2011knowledge or plain flag\u2011guessing unless it has a twist.  \n2. Keep questions easy\u2011to\u2011medium, requiring a quick, non\u2011obvious answer.  \n3. Open each short with a 2\u2011second hook teasing a surprising fact or twist.  \n4. Title videos as a concise question (6\u20118 words) and attach one relevant hashtag.  \n5. Use \u201cGuess\u201d, \u201cWhat\u201d, or \u201cReverse\u201d prompts to invite fast answers and add playful flair.  \n6. Avoid broad or trivial questions (e.g., \u201cHow many continents are there?\u201d) and overly obvious sports queries.  \n7. Keep the hashtag list short (1\u20113 tags) and specific to the content.  \n8. Craft unique phrasing; never copy another channel\u2019s exact title or question wording.",
+ "playbook_at": 15,
+ "intel": "Top quiz Shorts on YouTube right now: \"ENCONTR\u00c1 A NEYMAR, CRISTIANO Y HAALAND \ud83d\udc40\ud83d\udd0d#futbol #quiz\" (948260 views in 2 days, 6003 likes, tags []); \"Srinidhi Shetty\u2019s Funny Maths Answers Make Venkatesh Laugh! \ud83e\udd23\" (1496558 views in 3 days, 14958 likes, tags ['Venkatesh', 'Srinidhi Shetty', 'Suma Kanakala', 'Venkatesh funny moments', 'Srinidhi Shetty funny moment']); \"Guess TMKOC music \ud83c\udfb5\ud83d\ude02 #ytshorts #comedy #funny #tmkoc #siblings #shorts #viral #challenge #quiz\" (1272939 views in 3 days, 0 likes, tags []); \"Qual Clube o Neymar Segue?\" (1478455 views in 4 days, 33964 likes, tags []); \"I can guess your father\u2019s Name#challenge #quiz #shorts\" (845473 views in 2 days, 0 likes, tags ['Facts', 'Fact', 'Quiz', 'Reaction', 'Challenge']); \"Can You Name These 10 Luxury Car Brands? \ud83c\udfce\ufe0f\ud83d\udd25 (The Last One Is Impossible!) #shorts #quiz\" (706762 views in 2 days, 22643 likes, tags ['car quiz', 'guess the car brand', 'luxury car brands quiz', 'supercars quiz', 'the last one is impossible']); \"Sejal Gaba Hide & Seek Challenge\ud83e\udd76! #ytshorts #facts #quiz\" (3854425 views in 12 days, 59166 likes, tags []); \"GUESS THE REVERSED FOOTBALLER\u2019S NAME \ud83d\udd04 #football #soccer #shorts\" (1652234 views in 7 days, 49640 likes, tags ['front three', 'football podcast', 'premier league', 'champions league', 'soccer']). Weak ones in the same niche: \"Lequel est le MEXIQUE ? \ud83c\uddee\ud83c\uddf9\ud83c\uddf2\ud83c\uddfd Gauche ou droite ?! Quiz drapeau Countryballs #shorts\" (114930 views in 6 days, 933 likes, tags ['belgique allemagne', 'countryballs', 'countryballs france', 'devine le drapeau', 'devine le drapeau difficile']); \"Le VRAI drapeau de la FRANCE ? \ud83c\uddeb\ud83c\uddf7 Gauche ou droite ?! Quiz drapeau #shorts\" (103967 views in 7 days, 876 likes, tags ['countryballs', 'countryballs france', 'devine le drapeau', 'devine le drapeau du pays', 'drapeau australie']); \"Philippines vs South Korea: Who Has MORE People? \ud83c\uddf5\ud83c\udded\ud83c\uddf0\ud83c\uddf7 Countryballs Quiz #shorts\" (117026 views in 10 days, 1562 likes, tags ['country comparison', 'countryballs', 'countryballs quiz', 'geography quiz', 'kpop philippines']). Trending in gaming: Brawl Talk: Ranked Refresh, 3 New Brawlers and Traditional Brawlidays!; 10,000 VS 10,000 Player Minecraft War; \ud83d\udd34LIVE | AGE OF EMPIRES 4 | ME + THE #1 PLAYER IN THE GAME V 6 | #BUNGULATE; We Pitched Offensive Video Games To Strangers; Cheater Faked His Death; WORLDS 2026 | Swiss Stage Day 8; Rocket League but with Bugs; Why This Gas Station Is So Terrifying.",
+ "intel_at": "2026-11-01T11:43:30Z"
 }
