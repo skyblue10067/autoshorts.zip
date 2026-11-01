@@ -1,21 +1,22 @@
 # Channel report
 
-Typical video: 4.0 views/day
+Typical video: 3.9 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
-| - | - | - | - | multiple_choice/geography | Which continent is Argentina in? |
-| GOOD | 689 | - | 31 | multiple_choice/geography | Kingston is the capital of which country? |
-| GOOD | 564 | - | 14 | multiple_choice/geography | What is the capital of Chile? |
+| - | - | - | - | multiple_choice/geography | What is the capital of Algeria? |
+| GOOD | 270 | - | 6 | multiple_choice/geography | Which continent is Argentina in? |
+| GOOD | 907 | - | 31 | multiple_choice/geography | Kingston is the capital of which country? |
+| GOOD | 588 | - | 15 | multiple_choice/geography | What is the capital of Chile? |
 | WEAK | 1 | - | 0 | math/general | Quick maths: what is 20 percent of 300? |
 | WEAK | 0 | - | 0 | multiple_choice/geography | What is the capital of Libya? |
 | WEAK | 1 | - | 0 | flag_guess/geography | Which country's flag is this? |
 | OK | 4 | - | 0 | math/general | Quick maths: what is 813 minus 390? |
-| GOOD | 837 | - | 5 | multiple_choice/geography | What is the capital of Zimbabwe? |
+| GOOD | 835 | - | 5 | multiple_choice/geography | What is the capital of Zimbabwe? |
 | OK | 3 | - | 0 | flag_guess/geography | Which country's flag is this? |
-| GOOD | 696 | - | 13 | math/general | Quick maths: what is 509 plus 837? |
-| GOOD | 771 | - | 22 | multiple_choice/geography | What is the capital city of Cameroon? |
-| GOOD | 892 | - | 38 | multiple_choice/science | What gas do plants take in from the air? |
+| GOOD | 698 | - | 14 | math/general | Quick maths: what is 509 plus 837? |
+| GOOD | 791 | - | 22 | multiple_choice/geography | What is the capital city of Cameroon? |
+| GOOD | 891 | - | 38 | multiple_choice/science | What gas do plants take in from the air? |
 | GOOD | 1006 | - | 14 | multiple_choice/minecraft | What do you need to make a Nether portal? |
 | OK | 15 | - | 0 | multiple_choice/general | How many continents are there? |
 | WEAK | 6 | - | 0 | multiple_choice/science | Which planet is closest to the sun? |

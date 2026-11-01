@@ -68,7 +68,7 @@
    "difficulty": "",
    "title": "Can you get this right? What gas do plants take in from the air?",
    "id": "Vml8ecoD27c",
-   "views": 892,
+   "views": 891,
    "likes": 38,
    "published": "2026-10-30T08:40:33Z",
    "disputed": true
@@ -81,7 +81,7 @@
    "difficulty": "",
    "title": "Can you get this right? What is the capital city of Cameroon?",
    "id": "FN2esuaomao",
-   "views": 771,
+   "views": 791,
    "likes": 22,
    "published": "2026-10-30T22:11:21Z"
   },
@@ -94,8 +94,8 @@
    "difficulty": "easy",
    "title": "Can you solve this in 5 seconds?",
    "id": "vgyStrrEiMA",
-   "views": 696,
-   "likes": 13,
+   "views": 698,
+   "likes": 14,
    "published": "2026-10-31T02:26:07Z"
   },
   {
@@ -120,7 +120,7 @@
    "difficulty": "easy",
    "title": "Do you know the capital of Zimbabwe?",
    "id": "IUnLkBnUO90",
-   "views": 837,
+   "views": 835,
    "likes": 5,
    "published": "2026-10-31T13:05:47Z"
   },
@@ -185,8 +185,8 @@
    "difficulty": "medium",
    "title": "Do you know the capital of Chile?",
    "id": "A68IQfRc4iU",
-   "views": 564,
-   "likes": 14,
+   "views": 588,
+   "likes": 15,
    "published": "2026-11-01T04:54:52Z"
   },
   {
@@ -198,7 +198,7 @@
    "difficulty": "medium",
    "title": "Which country has Kingston as its capital?",
    "id": "upvAtWDsWeY",
-   "views": 689,
+   "views": 907,
    "likes": 31,
    "published": "2026-11-01T11:45:06Z"
   },
@@ -210,6 +210,19 @@
    "format": "multiple_choice/geography",
    "difficulty": "easy",
    "title": "Which continent is Argentina in?",
+   "id": "hYo-CNfb098",
+   "views": 270,
+   "likes": 6,
+   "published": "2026-11-01T15:57:14Z"
+  },
+  {
+   "n": 18,
+   "hook": "What is the capital of Algeria?",
+   "type": "multiple_choice",
+   "emoji": "",
+   "format": "multiple_choice/geography",
+   "difficulty": "easy",
+   "title": "Do you know the capital of Algeria?",
    "id": null
   }
  ],
