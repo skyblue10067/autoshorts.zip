@@ -56,7 +56,7 @@
    "difficulty": "",
    "title": "Can you get this right? What do you need to make a Nether portal?",
    "id": "S2nayWIjTRw",
-   "views": 1008,
+   "views": 1006,
    "likes": 14,
    "published": "2026-10-29T22:40:58Z"
   },
@@ -81,8 +81,8 @@
    "difficulty": "",
    "title": "Can you get this right? What is the capital city of Cameroon?",
    "id": "FN2esuaomao",
-   "views": 768,
-   "likes": 21,
+   "views": 771,
+   "likes": 22,
    "published": "2026-10-30T22:11:21Z"
   },
   {
@@ -94,8 +94,8 @@
    "difficulty": "easy",
    "title": "Can you solve this in 5 seconds?",
    "id": "vgyStrrEiMA",
-   "views": 681,
-   "likes": 11,
+   "views": 696,
+   "likes": 13,
    "published": "2026-10-31T02:26:07Z"
   },
   {
@@ -120,8 +120,8 @@
    "difficulty": "easy",
    "title": "Do you know the capital of Zimbabwe?",
    "id": "IUnLkBnUO90",
-   "views": 828,
-   "likes": 4,
+   "views": 837,
+   "likes": 5,
    "published": "2026-10-31T13:05:47Z"
   },
   {
@@ -185,7 +185,7 @@
    "difficulty": "medium",
    "title": "Do you know the capital of Chile?",
    "id": "A68IQfRc4iU",
-   "views": 404,
+   "views": 564,
    "likes": 14,
    "published": "2026-11-01T04:54:52Z"
   },
@@ -197,6 +197,19 @@
    "format": "multiple_choice/geography",
    "difficulty": "medium",
    "title": "Which country has Kingston as its capital?",
+   "id": "upvAtWDsWeY",
+   "views": 689,
+   "likes": 31,
+   "published": "2026-11-01T11:45:06Z"
+  },
+  {
+   "n": 17,
+   "hook": "Which continent is Argentina in?",
+   "type": "multiple_choice",
+   "emoji": "",
+   "format": "multiple_choice/geography",
+   "difficulty": "easy",
+   "title": "Which continent is Argentina in?",
    "id": null
   }
  ],
