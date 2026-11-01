@@ -56,7 +56,7 @@
    "difficulty": "",
    "title": "Can you get this right? What do you need to make a Nether portal?",
    "id": "S2nayWIjTRw",
-   "views": 1006,
+   "views": 1008,
    "likes": 14,
    "published": "2026-10-29T22:40:58Z"
   },
@@ -68,7 +68,7 @@
    "difficulty": "",
    "title": "Can you get this right? What gas do plants take in from the air?",
    "id": "Vml8ecoD27c",
-   "views": 891,
+   "views": 892,
    "likes": 38,
    "published": "2026-10-30T08:40:33Z",
    "disputed": true
@@ -81,8 +81,8 @@
    "difficulty": "",
    "title": "Can you get this right? What is the capital city of Cameroon?",
    "id": "FN2esuaomao",
-   "views": 791,
-   "likes": 22,
+   "views": 804,
+   "likes": 23,
    "published": "2026-10-30T22:11:21Z"
   },
   {
@@ -94,7 +94,7 @@
    "difficulty": "easy",
    "title": "Can you solve this in 5 seconds?",
    "id": "vgyStrrEiMA",
-   "views": 698,
+   "views": 709,
    "likes": 14,
    "published": "2026-10-31T02:26:07Z"
   },
@@ -120,7 +120,7 @@
    "difficulty": "easy",
    "title": "Do you know the capital of Zimbabwe?",
    "id": "IUnLkBnUO90",
-   "views": 835,
+   "views": 849,
    "likes": 5,
    "published": "2026-10-31T13:05:47Z"
   },
@@ -185,7 +185,7 @@
    "difficulty": "medium",
    "title": "Do you know the capital of Chile?",
    "id": "A68IQfRc4iU",
-   "views": 588,
+   "views": 598,
    "likes": 15,
    "published": "2026-11-01T04:54:52Z"
   },
@@ -198,7 +198,7 @@
    "difficulty": "medium",
    "title": "Which country has Kingston as its capital?",
    "id": "upvAtWDsWeY",
-   "views": 907,
+   "views": 917,
    "likes": 31,
    "published": "2026-11-01T11:45:06Z"
   },
@@ -211,7 +211,7 @@
    "difficulty": "easy",
    "title": "Which continent is Argentina in?",
    "id": "hYo-CNfb098",
-   "views": 270,
+   "views": 389,
    "likes": 6,
    "published": "2026-11-01T15:57:14Z"
   },
@@ -223,6 +223,19 @@
    "format": "multiple_choice/geography",
    "difficulty": "easy",
    "title": "Do you know the capital of Algeria?",
+   "id": "TnnkLv2PK2Y",
+   "views": 0,
+   "likes": 0,
+   "published": "2026-11-01T19:25:33Z"
+  },
+  {
+   "n": 19,
+   "hook": "Kampala is the capital of which country?",
+   "type": "multiple_choice",
+   "emoji": "",
+   "format": "multiple_choice/geography",
+   "difficulty": "easy",
+   "title": "Which country has Kampala as its capital?",
    "id": null
   }
  ],
