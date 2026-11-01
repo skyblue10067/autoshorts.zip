@@ -68,7 +68,7 @@
    "difficulty": "",
    "title": "Can you get this right? What gas do plants take in from the air?",
    "id": "Vml8ecoD27c",
-   "views": 869,
+   "views": 874,
    "likes": 37,
    "published": "2026-10-30T08:40:33Z",
    "disputed": true
@@ -81,7 +81,7 @@
    "difficulty": "",
    "title": "Can you get this right? What is the capital city of Cameroon?",
    "id": "FN2esuaomao",
-   "views": 750,
+   "views": 741,
    "likes": 19,
    "published": "2026-10-30T22:11:21Z"
   },
@@ -94,7 +94,7 @@
    "difficulty": "easy",
    "title": "Can you solve this in 5 seconds?",
    "id": "vgyStrrEiMA",
-   "views": 658,
+   "views": 656,
    "likes": 10,
    "published": "2026-10-31T02:26:07Z"
   },
@@ -120,8 +120,8 @@
    "difficulty": "easy",
    "title": "Do you know the capital of Zimbabwe?",
    "id": "IUnLkBnUO90",
-   "views": 804,
-   "likes": 5,
+   "views": 808,
+   "likes": 4,
    "published": "2026-10-31T13:05:47Z"
   },
   {
@@ -171,6 +171,19 @@
    "format": "math/general",
    "difficulty": "easy",
    "title": "Can you solve this in 5 seconds?",
+   "id": "IHdEJjsyCBk",
+   "views": 1,
+   "likes": 0,
+   "published": "2026-11-01T04:32:10Z"
+  },
+  {
+   "n": 15,
+   "hook": "What is the capital of Chile?",
+   "type": "multiple_choice",
+   "emoji": "",
+   "format": "multiple_choice/geography",
+   "difficulty": "medium",
+   "title": "Do you know the capital of Chile?",
    "id": null
   }
  ],

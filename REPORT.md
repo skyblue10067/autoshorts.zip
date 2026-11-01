@@ -4,15 +4,16 @@ Typical video: 3.4 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
-| - | - | - | - | math/general | Quick maths: what is 20 percent of 300? |
+| - | - | - | - | multiple_choice/geography | What is the capital of Chile? |
+| WEAK | 1 | - | 0 | math/general | Quick maths: what is 20 percent of 300? |
 | WEAK | 0 | - | 0 | multiple_choice/geography | What is the capital of Libya? |
 | WEAK | 1 | - | 0 | flag_guess/geography | Which country's flag is this? |
 | OK | 4 | - | 0 | math/general | Quick maths: what is 813 minus 390? |
-| GOOD | 804 | - | 5 | multiple_choice/geography | What is the capital of Zimbabwe? |
+| GOOD | 808 | - | 4 | multiple_choice/geography | What is the capital of Zimbabwe? |
 | OK | 3 | - | 0 | flag_guess/geography | Which country's flag is this? |
-| GOOD | 658 | - | 10 | math/general | Quick maths: what is 509 plus 837? |
-| GOOD | 750 | - | 19 | multiple_choice/geography | What is the capital city of Cameroon? |
-| GOOD | 869 | - | 37 | multiple_choice/science | What gas do plants take in from the air? |
+| GOOD | 656 | - | 10 | math/general | Quick maths: what is 509 plus 837? |
+| GOOD | 741 | - | 19 | multiple_choice/geography | What is the capital city of Cameroon? |
+| GOOD | 874 | - | 37 | multiple_choice/science | What gas do plants take in from the air? |
 | GOOD | 1004 | - | 13 | multiple_choice/minecraft | What do you need to make a Nether portal? |
 | OK | 11 | - | 0 | multiple_choice/general | How many continents are there? |
 | WEAK | 5 | - | 0 | multiple_choice/science | Which planet is closest to the sun? |
@@ -21,7 +22,6 @@ Typical video: 3.4 views/day
 
 ## Latest comments
 
-- **What gas do plants take in from the air?**: Incorrect answer, apply only daytime, night time is the reverse. That is why plants are taken away from the rooms in hospitals at night.
 - **What is the capital city of Cameroon?**: A easy
 - **What is the capital city of Cameroon?**: C
 - **Quick maths: what is 509 plus 837?**: D
