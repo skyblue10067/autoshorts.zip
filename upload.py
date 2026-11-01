@@ -13,3 +13,9 @@ r = yt.videos().insert(part="snippet,status",
           "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False}},
     media_body=MediaFileUpload(v)).execute()
 print("uploaded", r["id"], r.get("status", {}).get("privacyStatus"))
+try:   # custom thumbnail = the question screen, so the picture never gives the answer away
+    if os.path.exists("out/thumb.jpg"):
+        yt.thumbnails().set(videoId=r["id"], media_body=MediaFileUpload("out/thumb.jpg", mimetype="image/jpeg")).execute()
+        print("thumbnail set: question screen, no answer")
+except Exception as e:
+    print("thumbnail not set:", str(e)[:200], "| custom thumbnails need a phone-verified channel (youtube.com/verify)")

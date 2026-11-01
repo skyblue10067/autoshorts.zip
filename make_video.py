@@ -851,6 +851,8 @@ def make_video(q, num):
             draw_confetti(c, conf, tr)
         return c
 
+    # thumbnail: the moment when the whole question and all options are on screen, before any answer is shown
+    render(min(END - 0.1, times["count"][0] + 0.15)).save("out/thumb.jpg", quality=90)
     for i in range(int(END * FPS)): render(i / FPS).save(f"frames/f{i:05d}.jpg", quality=92)
     name = f"out/short_{num}.mp4"
     sh("-framerate", str(FPS), "-i", "frames/f%05d.jpg", "-i", "mix.wav", "-vf", "fps=30,format=yuv420p", "-c:v", "libx264",
