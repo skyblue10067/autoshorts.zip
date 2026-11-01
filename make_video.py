@@ -13,6 +13,7 @@ W, H = 1080, 1920
 FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 CFG = json.load(open("config.json")) if os.path.exists("config.json") else {}
 LANG = CFG.get("language", "en")
+AVOID = set(CFG.get("avoid_types", ["math", "flag_guess"]))   # quiz types the bot must never make
 HOURS = int(CFG.get("hours", 5))   # how often a new quiz is posted (the schedule itself is in .github/workflows/daily.yml)
 VOICES = {"en": "en-US-GuyNeural", "fr": "fr-FR-HenriNeural"}
 VOICE = CFG.get("voice", VOICES.get(LANG, VOICES["en"]))
@@ -135,7 +136,7 @@ def learning_summary():
     unit = "% watched" if use_ret else "views/day"; fmt = lambda x: f"{x[1]} ({x[0]:.1f} {unit}, {x[2]} videos)"
     good = [h["hook"] for h in HIST if vd.get(h["n"]) == "GOOD"][-5:]; weak = [h["hook"] for h in HIST if vd.get(h["n"]) == "WEAK"][-5:]
     tried = [h.get("type", "") for h in HIST] + [h.get("format", "").split("/")[-1] for h in HIST]
-    least = sorted(TYPES + CATS, key=lambda x: tried.count(x))[:4]
+    least = sorted([t for t in TYPES if t not in AVOID] + CATS, key=lambda x: tried.count(x))[:4]
     return (f"Channel typical: {med:.1f} views/day. GOOD videos (make more like these): {good}. WEAK videos (avoid this style): {weak}. "
             f"Best formats: " + "; ".join(fmt(x) for x in avg[:3]) + ". Worst: " + "; ".join(fmt(x) for x in avg[-2:]) +
             f". Least tried so far (test these sometimes): {least}."), use_ret
@@ -283,6 +284,7 @@ def clean(q):
     try:
         q = dict(q)
         t = q.get("type", "multiple_choice"); t = t if t in TYPES else "multiple_choice"
+        assert t not in AVOID, "type switched off: " + t
         opts = [strip_emoji(o) for o in q["options"]]
         n = 2 if t == "true_false" else 4
         assert len(opts) == n and len({o.lower() for o in opts}) == n and all(0 < len(o) <= 30 for o in opts)
@@ -325,7 +327,7 @@ def verify(q, skip=None):
 def gen_prompt(summary):
     seen = [h["hook"] for h in HIST][-40:]
     return (f"You write ONE quiz for a 25-second YouTube Short on a fun, high-energy faceless quiz channel. Write it in {T['name']}.\n"
-        f"Types: {TYPES}. true_false has 2 options [\"True\",\"False\"] (translated if not English); every other type has exactly 4 short options (max 28 characters each).\n"
+        f"Types: {[t for t in TYPES if t not in AVOID]}. NEVER write these types: {sorted(AVOID)}. Viewers of this channel watch capitals and geography, Minecraft and Roblox, science, football and general knowledge questions the most, so focus on those. true_false has 2 options [\"True\",\"False\"] (translated if not English); every other type has exactly 4 short options (max 28 characters each).\n"
         "odd_one_out: which option does not belong. clue_guess: 2 or 3 short clues, guess the country/person/thing. math: quick mental maths with one exact answer.\n"
         "flag_guess: put exactly ONE country flag emoji in the emoji field, question like 'Which country's flag is this?', options are 4 country names. "
         "Every quiz that is NOT an emoji puzzle needs an icon: ONE emoji that illustrates the question topic (a fire emoji for burning, a planet emoji for space, a football for football). "
@@ -401,6 +403,18 @@ def proc_one(kind, rnd):
             hook=rnd.choice(["Think fast!", "Capital check!", "Easy or tricky?"]), question=f"What is the capital of {c[0]}?",
             options=opts, answer=0, explain=f"{c[2]} is the capital of {c[0]}.",
             title=f"Do you know the capital of {c[0]}?", tags=["capitals", "geography", "quiz", "trivia"])
+    if kind == "capital_rev":
+        c = rnd.choice([x for x in COUNTRIES if x[2]]); opts = [c[0]] + [x[0] for x in pick_others(rnd, c, 3, 0)]
+        return dict(type="multiple_choice", cat="geography", difficulty="easy" if c[3] == "Africa" else "medium", icon="🌍",
+            hook=rnd.choice(["Think fast!", "Easy or tricky?", "Can you get it?"]), question=f"{c[2]} is the capital of which country?",
+            options=opts, answer=0, explain=f"{c[2]} is the capital of {c[0]}.",
+            title=f"Which country has {c[2]} as its capital?", tags=["capitals", "geography", "quiz", "trivia"])
+    if kind == "continent":
+        c = rnd.choice([x for x in COUNTRIES if x[0] != "Turkey"]); names = ["Africa", "Europe", "Asia", "Americas", "Oceania"]
+        opts = [c[3]] + rnd.sample([n for n in names if n != c[3]], 3)
+        return dict(type="multiple_choice", cat="geography", difficulty="easy", icon=flag_emoji(c[1]),
+            hook=rnd.choice(["Think fast!", "Do you know?"]), question=f"Which continent is {c[0]} in?",
+            options=opts, answer=0, explain=f"{c[0]} is in {c[3]}.", title=f"Which continent is {c[0]} in?", tags=["geography", "quiz", "trivia"])
     k = rnd.choice(["mul", "pct", "add", "sub"])
     if k == "mul": a, b = rnd.randint(6, 15), rnd.randint(6, 15); ans = a * b; qq = f"Quick maths: what is {a} times {b}?"; ex = f"{a} times {b} is {ans}."
     elif k == "pct": p, base = rnd.choice([10, 20, 25, 50]), rnd.choice(range(40, 401, 20)); ans = base * p // 100; qq = f"Quick maths: what is {p} percent of {base}?"; ex = f"{p} percent of {base} is {ans}."
@@ -417,10 +431,10 @@ def backup_quiz():
     """If every AI is unavailable the bot MAKES a fresh quiz itself (flags, capitals or maths), never a saved one, never a repeat."""
     if LANG != "en": return None
     rnd = random.Random(); used = {(h["hook"], h.get("emoji", "")) for h in HIST}
-    kinds = ["flag", "capital", "math"]
-    for i in range(3):
+    kinds = [k for k in ("capital", "capital_rev", "continent", "flag", "math") if {"flag": "flag_guess", "math": "math"}.get(k, "multiple_choice") not in AVOID]
+    for i in range(len(kinds)):
         for _ in range(60):
-            raw = proc_one(kinds[(NEXT_NUM + i) % 3], rnd)
+            raw = proc_one(kinds[(NEXT_NUM + i) % len(kinds)], rnd)
             q = clean(raw)
             if not q or (q["question"], q["emoji"]) in used: continue
             if q["emoji"] and not puzzle_images(q["emoji"]): continue
@@ -867,7 +881,7 @@ if __name__ == "__main__":
     maybe_update_playbook()
     q = pick_quiz()
     if not q:
-        print("AI quiz unavailable or failed the fact-check; the bot is making a flag, capital or maths quiz itself.")
+        print("AI quiz unavailable or failed the fact-check; the bot is making a capital or geography quiz itself.")
         q = backup_quiz()
     if not q:
         print("No quiz available this run. Skipping."); write_report(); sys.exit(0)
