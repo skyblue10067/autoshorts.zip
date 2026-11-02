@@ -14,6 +14,7 @@ FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 CFG = json.load(open("config.json")) if os.path.exists("config.json") else {}
 LANG = CFG.get("language", "en")
 AVOID = set(CFG.get("avoid_types", ["math", "flag_guess"]))   # quiz types the bot must never make
+AVOID_RE = re.compile(r"\b(" + "|".join(CFG.get("avoid_words", ["capital of", "capitals?", "countr(?:y|ies)", "continents?", "flags?", "nations?"])) + r")\b", re.I)
 HOURS = int(CFG.get("hours", 5))   # how often a new quiz is posted (the schedule itself is in .github/workflows/daily.yml)
 VOICES = {"en": "en-US-GuyNeural", "fr": "fr-FR-HenriNeural"}
 VOICE = CFG.get("voice", VOICES.get(LANG, VOICES["en"]))
@@ -35,11 +36,11 @@ PROVIDERS = {   # name: (address, name of the secret that holds its key)
     "groq": ("https://api.groq.com/openai/v1/chat/completions", "GROQ_KEY"),
     "gemini": ("https://generativelanguage.googleapis.com/v1beta/openai/chat/completions", "GEMINI_KEY"),
     "openrouter": ("https://openrouter.ai/api/v1/chat/completions", "OPENROUTER_KEY")}
-WRITERS = ["gemini:gemini-2.5-flash", "groq:llama-3.3-70b-versatile", "github:openai/gpt-4.1", "github:openai/gpt-4.1-mini",
-           "openrouter:deepseek/deepseek-chat-v3-0324:free", "github:deepseek/DeepSeek-V3-0324", "pollinations"]
-CHECKERS = ["groq:llama-3.3-70b-versatile", "github:deepseek/DeepSeek-V3-0324", "gemini:gemini-2.5-flash", "github:openai/gpt-4.1-mini",
-            "openrouter:meta-llama/llama-3.3-70b-instruct:free", "pollinations"]
-def available(models): return [m for m in models if m == "pollinations" or os.environ.get(PROVIDERS[m.split(":")[0]][1])]
+WRITERS = ["gemini:auto-flash", "gemini:gemini-flash-latest", "groq:llama-3.3-70b-versatile", "github:openai/gpt-4.1", "github:openai/gpt-4.1-mini",
+           "openrouter:deepseek/deepseek-chat-v3-0324:free"]
+CHECKERS = ["groq:llama-3.3-70b-versatile", "gemini:auto-flash-lite", "openrouter:meta-llama/llama-3.3-70b-instruct:free",
+            "github:deepseek/DeepSeek-V3-0324", "gemini:auto-flash"]
+def available(models): return [m for m in models if os.environ.get(PROVIDERS[m.split(":")[0]][1])]
 GEN_MODELS, VERIFIERS = available(WRITERS), available(CHECKERS)   # only models whose key exists
 API = "https://models.github.ai/inference/chat/completions"
 
@@ -58,7 +59,7 @@ SEEN_TITLES = []
 YT = None; OWN_CHANNEL = ""; INTEL = ""
 DISPUTED = []   # quizzes viewers said were wrong or unclear
 DISPUTE_RE = re.compile(r"\b(incorrect|mistake|wrong answer|is wrong|not correct|not true|error)\b", re.I)
-CATS = ["football", "geography", "science", "general", "anime", "minecraft", "roblox", "african culture", "movies", "history", "animals"]
+CATS = ["football", "science", "general", "anime", "minecraft", "roblox", "movies", "history", "animals", "space", "human body", "technology"]
 
 # ---------------------------------------------------------------- channel sync (read-only)
 def sync_channel():
@@ -129,12 +130,13 @@ def learning_summary():
     use_ret = sum("retention" in h for h in HIST) >= 5
     vd, med = verdicts(); groups = {}
     for h in HIST:
+        if AVOID_RE.search(h["hook"]) or "geography" in h.get("format", ""): continue
         s_ = h.get("retention") if use_ret else vpd(h)
         if s_ is not None: groups.setdefault(h.get("format", "?"), []).append(s_)
     if sum(len(v) for v in groups.values()) < 4: return "No reliable data yet: vary types and categories.", use_ret
     avg = sorted(((sum(v) / len(v), k, len(v)) for k, v in groups.items()), reverse=True)
     unit = "% watched" if use_ret else "views/day"; fmt = lambda x: f"{x[1]} ({x[0]:.1f} {unit}, {x[2]} videos)"
-    good = [h["hook"] for h in HIST if vd.get(h["n"]) == "GOOD"][-5:]; weak = [h["hook"] for h in HIST if vd.get(h["n"]) == "WEAK"][-5:]
+    good = [h["hook"] for h in HIST if vd.get(h["n"]) == "GOOD" and not AVOID_RE.search(h["hook"])][-5:]; weak = [h["hook"] for h in HIST if vd.get(h["n"]) == "WEAK" and not AVOID_RE.search(h["hook"])][-5:]
     tried = [h.get("type", "") for h in HIST] + [h.get("format", "").split("/")[-1] for h in HIST]
     least = sorted([t for t in TYPES if t not in AVOID] + CATS, key=lambda x: tried.count(x))[:4]
     return (f"Channel typical: {med:.1f} views/day. GOOD videos (make more like these): {good}. WEAK videos (avoid this style): {weak}. "
@@ -156,7 +158,7 @@ def market_intel():
     if YT is None: return
     try:
         vd, _ = verdicts()
-        good_cats = [h.get("format", "").split("/")[-1] for h in HIST if vd.get(h["n"]) == "GOOD"]
+        good_cats = [h.get("format", "").split("/")[-1] for h in HIST if vd.get(h["n"]) == "GOOD" and "geography" not in h.get("format", "")]
         niche = good_cats[-1] if good_cats else random.choice(["minecraft", "football", "flag", "roblox", "anime", "emoji"])
         after = (datetime.datetime.utcnow() - datetime.timedelta(days=14)).strftime("%Y-%m-%dT%H:%M:%SZ"); ids = []
         for qq in ("quiz shorts", f"{niche} quiz shorts"):
@@ -192,15 +194,28 @@ def write_report(use_ret=False):
     open("REPORT.md", "w").write("\n".join(L))
 
 # ---------------------------------------------------------------- AI: write + fact-check
-def call_pollinations(prompt, temp):
-    """Free AI that needs no key. Best effort: used only when GitHub's AI is unavailable."""
-    if os.environ.get("TEST_TTS"): return None
-    req = urllib.request.Request("https://text.pollinations.ai/openai", data=json.dumps({"model": "openai", "temperature": temp,
-        "messages": [{"role": "user", "content": prompt}]}).encode(), headers={"Content-Type": "application/json", "User-Agent": "quiz-shorts-bot"})
-    try:
-        with urllib.request.urlopen(req, timeout=60) as r: return json.loads(r.read().decode("utf-8", "replace"))["choices"][0]["message"]["content"]
-    except Exception as e:
-        print("AI call failed: pollinations", str(e)[:150]); return None
+DEAD_PROV, DEAD_MODEL, _MODELS = set(), set(), {}
+
+def list_models(prov):
+    """Ask the provider which models exist right now, so a retired model name can never break the bot again."""
+    if prov in _MODELS: return _MODELS[prov]
+    url, keyenv = PROVIDERS[prov]; key = os.environ.get(keyenv); ids = []
+    if key and shutil.which("curl"):
+        try:
+            out = subprocess.run(["curl", "-sS", "-m", "20", url.rsplit("/chat/completions", 1)[0] + "/models", "-H", "Authorization: Bearer " + key],
+                                 capture_output=True, timeout=30).stdout.decode("utf-8", "replace")
+            data = json.loads(out); data = data.get("data", data) if isinstance(data, dict) else data
+            ids = [str(m.get("id", "")).replace("models/", "") for m in data]
+        except Exception as e:
+            print("model list failed:", prov, str(e)[:100])
+    _MODELS[prov] = ids; return ids
+
+def resolve_model(prov, name):
+    if prov == "gemini" and name.startswith("auto-"):
+        kind = name[5:]; pat = re.compile(r"^gemini-(\d+(?:\.\d+)?)-" + kind + r"$")
+        found = sorted(((float(m.group(1)), i) for i in list_models("gemini") for m in [pat.match(i)] if m), reverse=True)
+        return found[0][1] if found else ("gemini-flash-lite-latest" if kind == "flash-lite" else "gemini-flash-latest")
+    return name
 
 def post_json(url, body, headers, timeout=45):
     """POST with curl (what GitHub's docs use). Keeps the POST and the body if the address redirects."""
@@ -234,19 +249,25 @@ def ai_diagnostic(url, key):
 def call_ai(model, prompt, temp=0.7):
     if time.time() > AI_BUDGET_UNTIL[0]:
         print("AI time budget used up, skipping", model); return None
-    if model == "pollinations": return call_pollinations(prompt, temp)
-    prov, name = model.split(":", 1); url, keyenv = PROVIDERS[prov]; key = os.environ.get(keyenv)
+    prov, name = model.split(":", 1)
+    if prov in DEAD_PROV or model in DEAD_MODEL: return None
+    url, keyenv = PROVIDERS[prov]; key = os.environ.get(keyenv)
     if not key:
         print("AI skipped:", model, "(no key)"); return None
+    name = resolve_model(prov, name)
     body = json.dumps({"model": name, "temperature": temp, "messages": [{"role": "user", "content": prompt}]}).encode()
     headers = {"Authorization": "Bearer " + key, "Content-Type": "application/json", "User-Agent": "quiz-shorts-bot"}
     if prov == "github": headers.update({"Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28"})
     status, raw, final = post_json(url, body, headers)
     try:
-        return json.loads(raw)["choices"][0]["message"]["content"]
+        r = json.loads(raw)
+        return (r[0] if isinstance(r, list) else r)["choices"][0]["message"]["content"]
     except Exception:
-        print("AI bad reply:", model, "status", status, "| body starts:", raw[:200].replace("\n", " "))
-        if prov == "github": ai_diagnostic(url, key)
+        print("AI bad reply:", f"{prov}:{name}", "status", status, "| body starts:", raw[:200].replace("\n", " "))
+        if status in (401, 403) or (status == 200 and prov == "github"):
+            DEAD_PROV.add(prov); print(f"  -> {prov} is not usable this run (check its key); skipping it from now on")
+            if prov == "github": ai_diagnostic(url, key)
+        elif status in (400, 404): DEAD_MODEL.add(model)
         return None
 
 def call_chain(models, prompt, temp=0.7):
@@ -258,14 +279,14 @@ def call_chain(models, prompt, temp=0.7):
 def maybe_update_playbook():
     """The AI reviews real results (and what other channels do) every 4 videos and rewrites its own rules."""
     global PLAYBOOK, PLAYBOOK_AT
-    vd, med = verdicts(); scored = [h for h in HIST if h["n"] in vd]
+    vd, med = verdicts(); scored = [h for h in HIST if h["n"] in vd and not AVOID_RE.search(h["hook"])]
     if len(scored) < 5 or len(HIST) - PLAYBOOK_AT < 4: return
     show = lambda h: f'[{vd[h["n"]]}] {h.get("format", "?")} / {h.get("difficulty", "?")}: "{h["hook"]}" -> {vpd(h):.1f} views/day, {h.get("likes", 0)} likes'
     prompt = ("You are the strategist of a faceless YouTube Shorts quiz channel. Here are the real results, each judged against the channel's typical "
               f"{med:.1f} views/day:\n" + "\n".join(show(h) for h in sorted(scored, key=lambda h: -vpd(h))[:24]) +
               f"\nWhat other quiz channels are doing right now: {INTEL or 'unknown'}\nViewer comments: {[t for _, t in COMMENTS][:25]}\n"
               f"Previous playbook: {PLAYBOOK or 'none'}\n"
-              "Write the updated playbook: at most 8 short rules, plain text, one per line, about what to make more and less of "
+              "The owner does NOT want quizzes about countries, capitals, continents or flags: never recommend them, whatever their views. Write the updated playbook: at most 8 short rules, plain text, one per line, about what to make more and less of "
               "(quiz types, categories, difficulty, hooks, title style, topics viewers ask for, patterns seen in winning channels). "
               "Base every rule on the evidence above, keep rules that still hold, drop ones the data contradicts. Never copy another channel's exact title or question. Reply with the rules only.")
     r, m = call_chain(GEN_MODELS, prompt, 0.4)
@@ -290,6 +311,7 @@ def clean(q):
         assert len(opts) == n and len({o.lower() for o in opts}) == n and all(0 < len(o) <= 30 for o in opts)
         a = int(q["answer"]); assert 0 <= a < n
         qu = strip_emoji(q["question"]); assert 8 <= len(qu) <= 120
+        assert not AVOID_RE.search(qu), "topic switched off"
         emoji = "".join(str(q.get("emoji", "")).split()) if t in ("emoji_guess", "flag_guess") else ""
         if t in ("emoji_guess", "flag_guess"):
             assert emoji and len(emoji_clusters(emoji)) <= 6 and len(qu) <= 50
@@ -317,7 +339,7 @@ def verify(q, skip=None):
               (f"Emojis shown to the player: {q['emoji']}\n" if q.get("emoji") else "") +
               "\n".join(f"{i}: {o}" for i, o in enumerate(q["options"])) +
               '\nReply ONLY JSON: {"answer": <option index>, "sure": true or false}')
-    for m in [m for m in VERIFIERS if m != skip]:
+    for m in ([m for m in VERIFIERS if m != skip] or VERIFIERS):
         r = jparse(call_ai(m, prompt, 0))
         if r is not None:
             try: return int(r["answer"]) == q["answer"] and r.get("sure") is True
@@ -334,7 +356,8 @@ def gen_prompt(summary):
         "Write questions that make people say wait, really? Avoid boring textbook questions like how many continents are there. Mix easy and tricky, and make the explanation a surprising fact. "
         "emoji_guess: put 2 to 5 emojis in the emoji field that spell out a famous movie, animal, food, or word; question like 'Which movie is this?'; keep these two types' questions under 50 characters. "
         "Emoji puzzles are very popular: use them in about one of every three quizzes. The emoji field must be empty for all other types.\n"
-        "Categories: football, geography, science, general, anime, minecraft, roblox, african culture, movies, history, animals.\n"
+        "Categories: football, science, general knowledge, anime, minecraft, roblox, movies, history, animals, space, human body, technology.\n"
+        "NEVER write about countries, capitals, continents, flags or nations: the owner does not want them.\n"
         f"Today's date is {datetime.date.today().isoformat()}. If a big event is happening around now that you are certain about (a tournament, a new movie or game), you may use it.\n"
         f"Your playbook, the lessons you learned from past results (follow them): {PLAYBOOK or 'none yet'}\n"
         f"Market intel from public YouTube data (learn the topics, hooks and title styles that win; NEVER copy any title or question): {INTEL or 'none'}\n"
@@ -427,17 +450,48 @@ def proc_one(kind, rnd):
     return dict(type="math", cat="general", difficulty="easy", icon="🧮", hook=rnd.choice(["Quick maths!", "Beat the clock!", "No calculator!"]),
         question=qq, options=[str(ans)] + [str(x) for x in wrong], answer=0, explain=ex, title="Can you solve this in 5 seconds?", tags=["maths", "quiz", "brain teaser"])
 
+ANIMALS = {"cow": ("🐄", "calf"), "horse": ("🐴", "foal"), "sheep": ("🐑", "lamb"), "goat": ("🐐", "kid"), "cat": ("🐱", "kitten"), "dog": ("🐶", "puppy"),
+           "duck": ("🦆", "duckling"), "frog": ("🐸", "tadpole"), "kangaroo": ("🦘", "joey"), "swan": ("🦢", "cygnet"), "hen": ("🐔", "chick"), "deer": ("🦌", "fawn")}
+CLASSES = {"shark": ("🦈", "Fish"), "dolphin": ("🐬", "Mammal"), "bat": ("🦇", "Mammal"), "penguin": ("🐧", "Bird"), "crocodile": ("🐊", "Reptile"), "frog": ("🐸", "Amphibian")}
+DIETS = {"lion": ("🦁", "Carnivore"), "cow": ("🐄", "Herbivore"), "bear": ("🐻", "Omnivore"), "shark": ("🦈", "Carnivore"), "horse": ("🐴", "Herbivore"), "deer": ("🦌", "Herbivore")}
+ELEMENTS = {"Gold": "Au", "Silver": "Ag", "Iron": "Fe", "Oxygen": "O", "Hydrogen": "H", "Sodium": "Na", "Potassium": "K", "Carbon": "C", "Helium": "He", "Copper": "Cu",
+            "Lead": "Pb", "Tin": "Sn", "Calcium": "Ca", "Nitrogen": "N", "Neon": "Ne", "Mercury": "Hg", "Zinc": "Zn", "Chlorine": "Cl", "Sulfur": "S", "Silicon": "Si"}
+MC_DROPS = [("a blaze rod", "Blaze"), ("an ender pearl", "Enderman"), ("a phantom membrane", "Phantom"), ("magma cream", "Magma Cube"), ("a slimeball", "Slime"),
+            ("a prismarine shard", "Guardian"), ("a ghast tear", "Ghast"), ("a shulker shell", "Shulker")]
+MC_MOBS = ["Creeper", "Zombie", "Skeleton", "Spider", "Enderman", "Blaze", "Ghast", "Slime", "Phantom", "Guardian", "Villager", "Witch", "Cow", "Pig", "Shulker", "Magma Cube"]
+HOOKS = ["Think fast!", "Easy or tricky?", "Can you get it?", "Are you ready?"]
+
+def proc_safe(kind, rnd):
+    """Quizzes the bot builds itself, with no countries. Every fact below is simple and certain."""
+    if kind == "mcdrop":
+        item, mob = rnd.choice(MC_DROPS); opts = [mob] + rnd.sample([m for m in MC_MOBS if m != mob], 3)
+        return dict(type="multiple_choice", cat="minecraft", difficulty="medium", icon="⛏️", hook=rnd.choice(HOOKS), question=f"Which Minecraft mob drops {item}?",
+                    options=opts, answer=0, explain=f"{mob} drops {item}.", title=f"Which mob drops {item}?", tags=["minecraft", "quiz", "gaming"])
+    if kind == "element":
+        name, sym = rnd.choice(list(ELEMENTS.items())); opts = [sym] + rnd.sample([v for v in ELEMENTS.values() if v != sym], 3)
+        return dict(type="multiple_choice", cat="science", difficulty="medium", icon="🧪", hook=rnd.choice(HOOKS), question=f"What is the chemical symbol for {name}?",
+                    options=opts, answer=0, explain=f"{sym} is the symbol for {name.lower()}.", title=f"Symbol for {name}?", tags=["science", "chemistry", "quiz"])
+    if kind == "baby":
+        a = rnd.choice(list(ANIMALS)); emo, baby = ANIMALS[a]; opts = [baby] + rnd.sample([v[1] for k, v in ANIMALS.items() if v[1] != baby], 3)
+        return dict(type="multiple_choice", cat="animals", difficulty="easy", icon=emo, hook=rnd.choice(HOOKS), question=f"What is a baby {a} called?",
+                    options=opts, answer=0, explain=f"A baby {a} is called a {baby}.", title=f"What is a baby {a} called?", tags=["animals", "quiz", "trivia"])
+    if kind == "class":
+        a = rnd.choice(list(CLASSES)); emo, cl = CLASSES[a]; opts = [cl] + rnd.sample([c for c in ("Fish", "Mammal", "Bird", "Reptile", "Amphibian") if c != cl], 3)
+        return dict(type="multiple_choice", cat="animals", difficulty="medium", icon=emo, hook=rnd.choice(HOOKS), question=f"Is a {a} a fish, mammal, bird, reptile or amphibian?",
+                    options=opts, answer=0, explain=f"A {a} is a {cl.lower()}.", title=f"Is a {a} a mammal?", tags=["animals", "quiz", "science"])
+    a = rnd.choice(list(DIETS)); emo, d = DIETS[a]; opts = [d] + [x for x in ("Carnivore", "Herbivore", "Omnivore", "Insectivore") if x != d][:3]
+    return dict(type="multiple_choice", cat="animals", difficulty="easy", icon=emo, hook=rnd.choice(HOOKS), question=f"Is a {a} a carnivore, herbivore or omnivore?",
+                options=opts, answer=0, explain=f"A {a} is a {d.lower()}.", title=f"What kind of eater is a {a}?", tags=["animals", "quiz", "trivia"])
+
 def backup_quiz():
-    """If every AI is unavailable the bot MAKES a fresh quiz itself (flags, capitals or maths), never a saved one, never a repeat."""
+    """If every AI fails the bot MAKES a fresh quiz itself (never a saved one, never a repeat, never about countries)."""
     if LANG != "en": return None
     rnd = random.Random(); used = {(h["hook"], h.get("emoji", "")) for h in HIST}
-    kinds = [k for k in ("capital", "capital_rev", "continent", "flag", "math") if {"flag": "flag_guess", "math": "math"}.get(k, "multiple_choice") not in AVOID]
+    kinds = ["mcdrop", "element", "baby", "mcdrop", "class", "diet"]
     for i in range(len(kinds)):
         for _ in range(60):
-            raw = proc_one(kinds[(NEXT_NUM + i) % len(kinds)], rnd)
-            q = clean(raw)
+            q = clean(proc_safe(kinds[(NEXT_NUM + i) % len(kinds)], rnd))
             if not q or (q["question"], q["emoji"]) in used: continue
-            if q["emoji"] and not puzzle_images(q["emoji"]): continue
             if q["icon"] and not puzzle_images(q["icon"]): q["icon"] = ""
             return q
     return None
@@ -881,7 +935,7 @@ if __name__ == "__main__":
     maybe_update_playbook()
     q = pick_quiz()
     if not q:
-        print("AI quiz unavailable or failed the fact-check; the bot is making a capital or geography quiz itself.")
+        print("AI quiz unavailable or failed the fact-check; the bot is making a Minecraft, science or animal quiz itself.")
         q = backup_quiz()
     if not q:
         print("No quiz available this run. Skipping."); write_report(); sys.exit(0)
