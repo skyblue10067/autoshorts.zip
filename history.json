@@ -68,8 +68,8 @@
    "difficulty": "",
    "title": "Can you get this right? What gas do plants take in from the air?",
    "id": "Vml8ecoD27c",
-   "views": 894,
-   "likes": 39,
+   "views": 896,
+   "likes": 40,
    "published": "2026-10-30T08:40:33Z",
    "disputed": true
   },
@@ -120,7 +120,7 @@
    "difficulty": "easy",
    "title": "Do you know the capital of Zimbabwe?",
    "id": "IUnLkBnUO90",
-   "views": 849,
+   "views": 851,
    "likes": 5,
    "published": "2026-10-31T13:05:47Z"
   },
@@ -185,7 +185,7 @@
    "difficulty": "medium",
    "title": "Do you know the capital of Chile?",
    "id": "A68IQfRc4iU",
-   "views": 618,
+   "views": 632,
    "likes": 15,
    "published": "2026-11-01T04:54:52Z"
   },
@@ -198,7 +198,7 @@
    "difficulty": "medium",
    "title": "Which country has Kingston as its capital?",
    "id": "upvAtWDsWeY",
-   "views": 925,
+   "views": 928,
    "likes": 31,
    "published": "2026-11-01T11:45:06Z"
   },
@@ -211,7 +211,7 @@
    "difficulty": "easy",
    "title": "Which continent is Argentina in?",
    "id": "hYo-CNfb098",
-   "views": 405,
+   "views": 425,
    "likes": 6,
    "published": "2026-11-01T15:57:14Z"
   },
@@ -250,10 +250,20 @@
    "difficulty": "easy",
    "title": "Which continent is Ethiopia in?",
    "id": null
+  },
+  {
+   "n": 21,
+   "hook": "What is the capital of Angola?",
+   "type": "multiple_choice",
+   "emoji": "",
+   "format": "multiple_choice/geography",
+   "difficulty": "easy",
+   "title": "Do you know the capital of Angola?",
+   "id": null
   }
  ],
- "playbook": "1. Prioritize geography, science, math, and Minecraft quizzes; skip generic general\u2011knowledge or plain flag\u2011guessing unless it has a twist.  \n2. Keep questions easy\u2011to\u2011medium, requiring a quick, non\u2011obvious answer.  \n3. Open each short with a 2\u2011second hook teasing a surprising fact or twist.  \n4. Title videos as a concise question (6\u20118 words) and attach one relevant hashtag.  \n5. Use \u201cGuess\u201d, \u201cWhat\u201d, or \u201cReverse\u201d prompts to invite fast answers and add playful flair.  \n6. Avoid broad or trivial questions (e.g., \u201cHow many continents are there?\u201d) and overly obvious sports queries.  \n7. Keep the hashtag list short (1\u20113 tags) and specific to the content.  \n8. Craft unique phrasing; never copy another channel\u2019s exact title or question wording.",
- "playbook_at": 15,
+ "playbook": "1. Prioritize quick, twisty quizzes in geography, science, math, Minecraft, and trending topics (sports, cars, gaming).  \n2. Keep difficulty at easy to medium; skip overly simple or obscure questions that attract little engagement.  \n3. Start each short with a 2\u2011second hook teasing a surprising fact or challenge.  \n4. Title videos as a concise 6\u20118\u202fword question, beginning with \u201cGuess\u201d, \u201cWhat\u201d, or \u201cReverse\u201d, and attach one specific hashtag.  \n5. Use one or two highly relevant tags (e.g., #carquiz, #minecraft, #sciencequiz) and keep the list short.  \n6. Avoid generic general\u2011knowledge or plain flag\u2011guessing unless it includes a twist or countryballs style.  \n7. Add a unique twist\u2014reverse names, impossible challenge, hidden clues\u2014to sports or common trivia to boost interest.  \n8. Never copy another channel\u2019s exact title or wording; craft fresh phrasing for each quiz.",
+ "playbook_at": 20,
  "intel": "Top quiz Shorts on YouTube right now: \"\u00a1ENCONTR\u00c1 A LAMINE YAMAL, CUCURELLA Y NEYMAR! \ud83d\udc40\ud83d\udd0d #futbol #quiz\" (1586731 views in 1 days, 10400 likes, tags []); \"ENCONTR\u00c1 A NEYMAR, CRISTIANO Y HAALAND \ud83d\udc40\ud83d\udd0d#futbol #quiz\" (1082336 views in 3 days, 7000 likes, tags []); \"Guess TMKOC music \ud83c\udfb5\ud83d\ude02 #ytshorts #comedy #funny #tmkoc #siblings #shorts #viral #challenge #quiz\" (1377868 views in 4 days, 0 likes, tags []); \"Qual Clube o Neymar Segue?\" (1676706 views in 4 days, 37313 likes, tags []); \"Sejal Gaba Hide & Seek Challenge\ud83e\udd76! #ytshorts #facts #quiz\" (3864765 views in 13 days, 59313 likes, tags []); \"Can You Name These 10 Luxury Car Brands? \ud83c\udfce\ufe0f\ud83d\udd25 (The Last One Is Impossible!) #shorts #quiz\" (777999 views in 3 days, 24286 likes, tags ['car quiz', 'guess the car brand', 'luxury car brands quiz', 'supercars quiz', 'the last one is impossible']); \"I can guess your father\u2019s Name#challenge #quiz #shorts\" (869330 views in 3 days, 0 likes, tags ['Facts', 'Fact', 'Quiz', 'Reaction', 'Challenge']); \"GUESS THE REVERSED FOOTBALLER\u2019S NAME \ud83d\udd04 #football #soccer #shorts\" (1719388 views in 8 days, 50882 likes, tags ['front three', 'football podcast', 'premier league', 'champions league', 'soccer']). Weak ones in the same niche: \"Lequel est le MEXIQUE ? \ud83c\uddee\ud83c\uddf9\ud83c\uddf2\ud83c\uddfd Gauche ou droite ?! Quiz drapeau Countryballs #shorts\" (121707 views in 7 days, 971 likes, tags ['belgique allemagne', 'countryballs', 'countryballs france', 'devine le drapeau', 'devine le drapeau difficile']); \"Le VRAI drapeau de la FRANCE ? \ud83c\uddeb\ud83c\uddf7 Gauche ou droite ?! Quiz drapeau #shorts\" (112448 views in 7 days, 918 likes, tags ['countryballs', 'countryballs france', 'devine le drapeau', 'devine le drapeau du pays', 'drapeau australie']); \"Philippines vs South Korea: Who Has MORE People? \ud83c\uddf5\ud83c\udded\ud83c\uddf0\ud83c\uddf7 Countryballs Quiz #shorts\" (118255 views in 11 days, 1579 likes, tags ['country comparison', 'countryballs', 'countryballs quiz', 'geography quiz', 'kpop philippines']). Trending in gaming: 10,000 Player Minecraft War: Nether VS Overworld; Beating Minecraft With The Disabilities Mod; Kidnapped By VENOM GIRLS in Minecraft..; PLAYING ROBLOX INSIDE OF ROBLOX..; This Isn\u2019t A Regular Dog\u2026; Wheel of MUT Season Two Opener! Ep. #11; Upgrading Crafting - Sky Factory Season 7 EP 8; We Pitched Offensive Video Games To Strangers.",
  "intel_at": "2026-11-02T04:54:12Z"
 }
