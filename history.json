@@ -68,7 +68,7 @@
    "difficulty": "",
    "title": "Can you get this right? What gas do plants take in from the air?",
    "id": "Vml8ecoD27c",
-   "views": 899,
+   "views": 905,
    "likes": 40,
    "published": "2026-10-30T08:40:33Z",
    "disputed": true
@@ -81,7 +81,7 @@
    "difficulty": "",
    "title": "Can you get this right? What is the capital city of Cameroon?",
    "id": "FN2esuaomao",
-   "views": 817,
+   "views": 819,
    "likes": 23,
    "published": "2026-10-30T22:11:21Z"
   },
@@ -185,7 +185,7 @@
    "difficulty": "medium",
    "title": "Do you know the capital of Chile?",
    "id": "A68IQfRc4iU",
-   "views": 644,
+   "views": 649,
    "likes": 17,
    "published": "2026-11-01T04:54:52Z"
   },
@@ -198,7 +198,7 @@
    "difficulty": "medium",
    "title": "Which country has Kingston as its capital?",
    "id": "upvAtWDsWeY",
-   "views": 932,
+   "views": 929,
    "likes": 31,
    "published": "2026-11-01T11:45:06Z"
   },
@@ -211,7 +211,7 @@
    "difficulty": "easy",
    "title": "Which continent is Argentina in?",
    "id": "hYo-CNfb098",
-   "views": 438,
+   "views": 444,
    "likes": 6,
    "published": "2026-11-01T15:57:14Z"
   },
@@ -260,8 +260,8 @@
    "difficulty": "easy",
    "title": "Do you know the capital of Angola?",
    "id": "gcr4VPq-gYs",
-   "views": 263,
-   "likes": 8,
+   "views": 333,
+   "likes": 9,
    "published": "2026-11-02T13:15:20Z"
   },
   {
@@ -272,6 +272,19 @@
    "format": "multiple_choice/animals",
    "difficulty": "medium",
    "title": "Is a bat a mammal?",
+   "id": "zymi5MtuSzw",
+   "views": 3,
+   "likes": 0,
+   "published": "2026-11-02T23:02:01Z"
+  },
+  {
+   "n": 23,
+   "hook": "Is a deer a carnivore, herbivore or omnivore?",
+   "type": "multiple_choice",
+   "emoji": "",
+   "format": "multiple_choice/animals",
+   "difficulty": "easy",
+   "title": "What kind of eater is a deer?",
    "id": null
   }
  ],

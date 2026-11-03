@@ -1,17 +1,18 @@
 # Channel report
 
-Typical video: 3.0 views/day
+Typical video: 2.8 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
-| - | - | - | - | multiple_choice/animals | Is a bat a fish, mammal, bird, reptile or amphibian? |
-| GOOD | 263 | - | 8 | multiple_choice/geography | What is the capital of Angola? |
+| - | - | - | - | multiple_choice/animals | Is a deer a carnivore, herbivore or omnivore? |
+| OK | 3 | - | 0 | multiple_choice/animals | Is a bat a fish, mammal, bird, reptile or amphibian? |
+| GOOD | 333 | - | 9 | multiple_choice/geography | What is the capital of Angola? |
 | - | - | - | - | multiple_choice/geography | Which continent is Ethiopia in? |
 | WEAK | 0 | - | 0 | multiple_choice/geography | Kampala is the capital of which country? |
 | WEAK | 0 | - | 0 | multiple_choice/geography | What is the capital of Algeria? |
-| GOOD | 438 | - | 6 | multiple_choice/geography | Which continent is Argentina in? |
-| GOOD | 932 | - | 31 | multiple_choice/geography | Kingston is the capital of which country? |
-| GOOD | 644 | - | 17 | multiple_choice/geography | What is the capital of Chile? |
+| GOOD | 444 | - | 6 | multiple_choice/geography | Which continent is Argentina in? |
+| GOOD | 929 | - | 31 | multiple_choice/geography | Kingston is the capital of which country? |
+| GOOD | 649 | - | 17 | multiple_choice/geography | What is the capital of Chile? |
 | WEAK | 1 | - | 0 | math/general | Quick maths: what is 20 percent of 300? |
 | WEAK | 0 | - | 0 | multiple_choice/geography | What is the capital of Libya? |
 | WEAK | 1 | - | 0 | flag_guess/geography | Which country's flag is this? |
@@ -19,8 +20,8 @@ Typical video: 3.0 views/day
 | GOOD | 851 | - | 5 | multiple_choice/geography | What is the capital of Zimbabwe? |
 | WEAK | 3 | - | 0 | flag_guess/geography | Which country's flag is this? |
 | GOOD | 716 | - | 14 | math/general | Quick maths: what is 509 plus 837? |
-| GOOD | 817 | - | 23 | multiple_choice/geography | What is the capital city of Cameroon? |
-| GOOD | 899 | - | 40 | multiple_choice/science | What gas do plants take in from the air? |
+| GOOD | 819 | - | 23 | multiple_choice/geography | What is the capital city of Cameroon? |
+| GOOD | 905 | - | 40 | multiple_choice/science | What gas do plants take in from the air? |
 | GOOD | 1008 | - | 14 | multiple_choice/minecraft | What do you need to make a Nether portal? |
 | OK | 15 | - | 0 | multiple_choice/general | How many continents are there? |
 | WEAK | 6 | - | 0 | multiple_choice/science | Which planet is closest to the sun? |
