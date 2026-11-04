@@ -81,7 +81,7 @@
    "difficulty": "",
    "title": "Can you get this right? What is the capital city of Cameroon?",
    "id": "FN2esuaomao",
-   "views": 819,
+   "views": 820,
    "likes": 23,
    "published": "2026-10-30T22:11:21Z"
   },
@@ -185,7 +185,7 @@
    "difficulty": "medium",
    "title": "Do you know the capital of Chile?",
    "id": "A68IQfRc4iU",
-   "views": 652,
+   "views": 653,
    "likes": 17,
    "published": "2026-11-01T04:54:52Z"
   },
@@ -211,7 +211,7 @@
    "difficulty": "easy",
    "title": "Which continent is Argentina in?",
    "id": "hYo-CNfb098",
-   "views": 458,
+   "views": 460,
    "likes": 7,
    "published": "2026-11-01T15:57:14Z"
   },
@@ -260,7 +260,7 @@
    "difficulty": "easy",
    "title": "Do you know the capital of Angola?",
    "id": "gcr4VPq-gYs",
-   "views": 342,
+   "views": 343,
    "likes": 10,
    "published": "2026-11-02T13:15:20Z"
   },
@@ -286,8 +286,8 @@
    "difficulty": "easy",
    "title": "What kind of eater is a deer?",
    "id": "v3zLRfGcRT0",
-   "views": 56,
-   "likes": 2,
+   "views": 58,
+   "likes": 3,
    "published": "2026-11-03T05:43:55Z"
   },
   {
@@ -298,6 +298,19 @@
    "format": "multiple_choice/minecraft",
    "difficulty": "medium",
    "title": "Which mob drops a phantom membrane?",
+   "id": "YUTVW0ARED4",
+   "views": 15,
+   "likes": 0,
+   "published": "2026-11-03T17:38:37Z"
+  },
+  {
+   "n": 25,
+   "hook": "What is the chemical symbol for Potassium?",
+   "type": "multiple_choice",
+   "emoji": "",
+   "format": "multiple_choice/science",
+   "difficulty": "medium",
+   "title": "Symbol for Potassium?",
    "id": null
   }
  ],
