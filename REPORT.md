@@ -1,9 +1,10 @@
 # Channel report
 
-Typical video: 2.2 views/day
+Typical video: 2.1 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
+| - | - | - | - | multiple_choice/animals | Is a shark a fish, mammal, bird, reptile or amphibian? |
 | - | - | - | - | multiple_choice/minecraft | Which Minecraft mob drops a slimeball? |
 | - | - | - | - | multiple_choice/animals | What is a baby frog called? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Potassium? |
