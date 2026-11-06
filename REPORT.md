@@ -4,6 +4,7 @@ Typical video: 1.7 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
+| - | - | - | - | multiple_choice/animals | What is a baby cat called? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Lead? |
 | - | - | - | - | multiple_choice/minecraft | Which Minecraft mob drops magma cream? |
 | - | - | - | - | multiple_choice/animals | Is a lion a carnivore, herbivore or omnivore? |
