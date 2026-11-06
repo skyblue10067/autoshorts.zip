@@ -4,6 +4,7 @@ Typical video: 1.9 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
+| - | - | - | - | multiple_choice/minecraft | Which Minecraft mob drops magma cream? |
 | - | - | - | - | multiple_choice/animals | Is a lion a carnivore, herbivore or omnivore? |
 | - | - | - | - | multiple_choice/animals | Is a shark a fish, mammal, bird, reptile or amphibian? |
 | - | - | - | - | multiple_choice/minecraft | Which Minecraft mob drops a slimeball? |
