@@ -1,9 +1,10 @@
 # Channel report
 
-Typical video: 1.9 views/day
+Typical video: 1.7 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
+| - | - | - | - | multiple_choice/science | What is the chemical symbol for Lead? |
 | - | - | - | - | multiple_choice/minecraft | Which Minecraft mob drops magma cream? |
 | - | - | - | - | multiple_choice/animals | Is a lion a carnivore, herbivore or omnivore? |
 | - | - | - | - | multiple_choice/animals | Is a shark a fish, mammal, bird, reptile or amphibian? |
@@ -12,7 +13,7 @@ Typical video: 1.9 views/day
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Potassium? |
 | GOOD | 15 | - | 0 | multiple_choice/minecraft | Which Minecraft mob drops a phantom membrane? |
 | GOOD | 58 | - | 3 | multiple_choice/animals | Is a deer a carnivore, herbivore or omnivore? |
-| OK | 3 | - | 0 | multiple_choice/animals | Is a bat a fish, mammal, bird, reptile or amphibian? |
+| WEAK | 3 | - | 0 | multiple_choice/animals | Is a bat a fish, mammal, bird, reptile or amphibian? |
 | GOOD | 343 | - | 10 | multiple_choice/geography | What is the capital of Angola? |
 | - | - | - | - | multiple_choice/geography | Which continent is Ethiopia in? |
 | WEAK | 0 | - | 0 | multiple_choice/geography | Kampala is the capital of which country? |
