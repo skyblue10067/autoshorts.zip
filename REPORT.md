@@ -1,9 +1,10 @@
 # Channel report
 
-Typical video: 1.7 views/day
+Typical video: 1.6 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
+| - | - | - | - | multiple_choice/minecraft | Which Minecraft mob drops a blaze rod? |
 | - | - | - | - | multiple_choice/animals | What is a baby cat called? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Lead? |
 | - | - | - | - | multiple_choice/minecraft | Which Minecraft mob drops magma cream? |
