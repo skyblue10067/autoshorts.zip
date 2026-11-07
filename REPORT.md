@@ -4,6 +4,7 @@ Typical video: 1.5 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
+| - | - | - | - | multiple_choice/animals | Is a horse a carnivore, herbivore or omnivore? |
 | - | - | - | - | multiple_choice/animals | Is a frog a fish, mammal, bird, reptile or amphibian? |
 | - | - | - | - | multiple_choice/minecraft | Which Minecraft mob drops a blaze rod? |
 | - | - | - | - | multiple_choice/animals | What is a baby cat called? |
