@@ -1,9 +1,10 @@
 # Channel report
 
-Typical video: 1.5 views/day
+Typical video: 1.4 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
+| - | - | - | - | multiple_choice/science | What is the chemical symbol for Iron? |
 | - | - | - | - | multiple_choice/minecraft | Which Minecraft mob drops a ghast tear? |
 | - | - | - | - | multiple_choice/animals | Is a horse a carnivore, herbivore or omnivore? |
 | - | - | - | - | multiple_choice/animals | Is a frog a fish, mammal, bird, reptile or amphibian? |
