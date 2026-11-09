@@ -1,9 +1,10 @@
 # Channel report
 
-Typical video: 1.4 views/day
+Typical video: 1.3 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
+| - | - | - | - | multiple_choice/animals | Is a crocodile a fish, mammal, bird, reptile or amphibian? |
 | - | - | - | - | multiple_choice/minecraft | Which Minecraft mob drops a shulker shell? |
 | - | - | - | - | multiple_choice/animals | What is a baby sheep called? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Iron? |
