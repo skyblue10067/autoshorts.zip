@@ -4,6 +4,7 @@ Typical video: 1.3 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
+| - | - | - | - | multiple_choice/animals | Is a shark a carnivore, herbivore or omnivore? |
 | - | - | - | - | multiple_choice/animals | Is a crocodile a fish, mammal, bird, reptile or amphibian? |
 | - | - | - | - | multiple_choice/minecraft | Which Minecraft mob drops a shulker shell? |
 | - | - | - | - | multiple_choice/animals | What is a baby sheep called? |
@@ -43,7 +44,6 @@ Typical video: 1.3 views/day
 | OK | 15 | - | 0 | multiple_choice/general | How many continents are there? |
 | WEAK | 6 | - | 0 | multiple_choice/science | Which planet is closest to the sun? |
 | WEAK | 7 | - | 0 | multiple_choice/football | Which country won the 2022 World Cup? |
-| OK | 9 | - | 0 | multiple_choice/geography | Which is the largest country in Africa by area? |
 
 ## Latest comments
 
