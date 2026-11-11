@@ -4,6 +4,7 @@ Typical video: 1.1 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
+| - | - | - | - | multiple_choice/animals | Is a dolphin a fish, mammal, bird, reptile or amphibian? |
 | - | - | - | - | multiple_choice/minecraft | Which Minecraft mob drops an ender pearl? |
 | - | - | - | - | multiple_choice/animals | What is a baby dog called? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Sodium? |
@@ -43,7 +44,6 @@ Typical video: 1.1 views/day
 | WEAK | 3 | - | 0 | flag_guess/geography | Which country's flag is this? |
 | GOOD | 715 | - | 14 | math/general | Quick maths: what is 509 plus 837? |
 | GOOD | 820 | - | 23 | multiple_choice/geography | What is the capital city of Cameroon? |
-| GOOD | 905 | - | 40 | multiple_choice/science | What gas do plants take in from the air? |
 
 ## Latest comments
 
