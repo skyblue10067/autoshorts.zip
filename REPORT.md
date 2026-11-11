@@ -1,9 +1,10 @@
 # Channel report
 
-Typical video: 1.2 views/day
+Typical video: 1.1 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
+| - | - | - | - | multiple_choice/animals | What is a baby dog called? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Sodium? |
 | - | - | - | - | multiple_choice/minecraft | Which Minecraft mob drops a prismarine shard? |
 | - | - | - | - | multiple_choice/animals | Is a shark a carnivore, herbivore or omnivore? |
@@ -43,7 +44,6 @@ Typical video: 1.2 views/day
 | GOOD | 820 | - | 23 | multiple_choice/geography | What is the capital city of Cameroon? |
 | GOOD | 905 | - | 40 | multiple_choice/science | What gas do plants take in from the air? |
 | GOOD | 1005 | - | 14 | multiple_choice/minecraft | What do you need to make a Nether portal? |
-| OK | 15 | - | 0 | multiple_choice/general | How many continents are there? |
 
 ## Latest comments
 
