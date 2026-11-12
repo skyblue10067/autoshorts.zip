@@ -4,6 +4,7 @@ Typical video: 1.0 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
+| - | - | - | - | multiple_choice/science | What is the chemical symbol for Gold? |
 | - | - | - | - | multiple_choice/animals | Is a cow a carnivore, herbivore or omnivore? |
 | - | - | - | - | multiple_choice/animals | Is a dolphin a fish, mammal, bird, reptile or amphibian? |
 | - | - | - | - | multiple_choice/minecraft | Which Minecraft mob drops an ender pearl? |
@@ -43,7 +44,6 @@ Typical video: 1.0 views/day
 | WEAK | 4 | - | 0 | math/general | Quick maths: what is 813 minus 390? |
 | GOOD | 851 | - | 5 | multiple_choice/geography | What is the capital of Zimbabwe? |
 | WEAK | 3 | - | 0 | flag_guess/geography | Which country's flag is this? |
-| GOOD | 715 | - | 14 | math/general | Quick maths: what is 509 plus 837? |
 
 ## Latest comments
 
