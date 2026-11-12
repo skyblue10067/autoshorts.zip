@@ -1,9 +1,10 @@
 # Channel report
 
-Typical video: 1.1 views/day
+Typical video: 1.0 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
+| - | - | - | - | multiple_choice/animals | Is a cow a carnivore, herbivore or omnivore? |
 | - | - | - | - | multiple_choice/animals | Is a dolphin a fish, mammal, bird, reptile or amphibian? |
 | - | - | - | - | multiple_choice/minecraft | Which Minecraft mob drops an ender pearl? |
 | - | - | - | - | multiple_choice/animals | What is a baby dog called? |
@@ -43,7 +44,6 @@ Typical video: 1.1 views/day
 | GOOD | 851 | - | 5 | multiple_choice/geography | What is the capital of Zimbabwe? |
 | WEAK | 3 | - | 0 | flag_guess/geography | Which country's flag is this? |
 | GOOD | 715 | - | 14 | math/general | Quick maths: what is 509 plus 837? |
-| GOOD | 820 | - | 23 | multiple_choice/geography | What is the capital city of Cameroon? |
 
 ## Latest comments
 
