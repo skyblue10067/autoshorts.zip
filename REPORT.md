@@ -4,6 +4,7 @@ Typical video: 1.0 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
+| - | - | - | - | multiple_choice/animals | What is a baby deer called? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Carbon? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Gold? |
 | - | - | - | - | multiple_choice/animals | Is a cow a carnivore, herbivore or omnivore? |
@@ -43,7 +44,6 @@ Typical video: 1.0 views/day
 | WEAK | 0 | - | 0 | multiple_choice/geography | What is the capital of Libya? |
 | WEAK | 1 | - | 0 | flag_guess/geography | Which country's flag is this? |
 | WEAK | 4 | - | 0 | math/general | Quick maths: what is 813 minus 390? |
-| GOOD | 851 | - | 5 | multiple_choice/geography | What is the capital of Zimbabwe? |
 
 ## Latest comments
 
