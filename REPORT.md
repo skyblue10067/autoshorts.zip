@@ -4,6 +4,7 @@ Typical video: 0.9 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
+| - | - | - | - | multiple_choice/science | What is the chemical symbol for Helium? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Hydrogen? |
 | - | - | - | - | multiple_choice/animals | Is a bear a carnivore, herbivore or omnivore? |
 | - | - | - | - | multiple_choice/animals | Is a penguin a fish, mammal, bird, reptile or amphibian? |
@@ -43,7 +44,6 @@ Typical video: 0.9 views/day
 | GOOD | 460 | - | 7 | multiple_choice/geography | Which continent is Argentina in? |
 | GOOD | 1006 | - | 32 | multiple_choice/geography | Kingston is the capital of which country? |
 | GOOD | 653 | - | 17 | multiple_choice/geography | What is the capital of Chile? |
-| WEAK | 1 | - | 0 | math/general | Quick maths: what is 20 percent of 300? |
 
 ## Latest comments
 
