@@ -4,6 +4,7 @@ Typical video: 0.9 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
+| - | - | - | - | multiple_choice/animals | Is a bear a carnivore, herbivore or omnivore? |
 | - | - | - | - | multiple_choice/animals | Is a penguin a fish, mammal, bird, reptile or amphibian? |
 | - | - | - | - | multiple_choice/animals | What is a baby deer called? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Carbon? |
@@ -43,7 +44,6 @@ Typical video: 0.9 views/day
 | GOOD | 653 | - | 17 | multiple_choice/geography | What is the capital of Chile? |
 | WEAK | 1 | - | 0 | math/general | Quick maths: what is 20 percent of 300? |
 | WEAK | 0 | - | 0 | multiple_choice/geography | What is the capital of Libya? |
-| WEAK | 1 | - | 0 | flag_guess/geography | Which country's flag is this? |
 
 ## Latest comments
 
