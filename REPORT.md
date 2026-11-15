@@ -1,9 +1,10 @@
 # Channel report
 
-Typical video: 0.9 views/day
+Typical video: 0.8 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
+| - | - | - | - | multiple_choice/animals | What is a baby goat called? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Chlorine? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Helium? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Hydrogen? |
@@ -43,7 +44,6 @@ Typical video: 0.9 views/day
 | WEAK | 0 | - | 0 | multiple_choice/geography | Kampala is the capital of which country? |
 | WEAK | 0 | - | 0 | multiple_choice/geography | What is the capital of Algeria? |
 | GOOD | 460 | - | 7 | multiple_choice/geography | Which continent is Argentina in? |
-| GOOD | 1006 | - | 32 | multiple_choice/geography | Kingston is the capital of which country? |
 
 ## Latest comments
 
