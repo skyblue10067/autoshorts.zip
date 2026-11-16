@@ -4,6 +4,7 @@ Typical video: 0.8 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
+| - | - | - | - | multiple_choice/science | What is the chemical symbol for Neon? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Tin? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Copper? |
 | - | - | - | - | multiple_choice/animals | What is a baby goat called? |
@@ -43,7 +44,6 @@ Typical video: 0.8 views/day
 | WEAK | 3 | - | 0 | multiple_choice/animals | Is a bat a fish, mammal, bird, reptile or amphibian? |
 | GOOD | 343 | - | 10 | multiple_choice/geography | What is the capital of Angola? |
 | - | - | - | - | multiple_choice/geography | Which continent is Ethiopia in? |
-| WEAK | 0 | - | 0 | multiple_choice/geography | Kampala is the capital of which country? |
 
 ## Latest comments
 
