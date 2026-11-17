@@ -4,6 +4,7 @@ Typical video: 0.8 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
+| - | - | - | - | multiple_choice/science | What is the chemical symbol for Oxygen? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Zinc? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Neon? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Tin? |
@@ -43,7 +44,6 @@ Typical video: 0.8 views/day
 | OK | 15 | - | 0 | multiple_choice/minecraft | Which Minecraft mob drops a phantom membrane? |
 | GOOD | 58 | - | 3 | multiple_choice/animals | Is a deer a carnivore, herbivore or omnivore? |
 | WEAK | 3 | - | 0 | multiple_choice/animals | Is a bat a fish, mammal, bird, reptile or amphibian? |
-| GOOD | 343 | - | 10 | multiple_choice/geography | What is the capital of Angola? |
 
 ## Latest comments
 
@@ -51,14 +51,14 @@ Typical video: 0.8 views/day
 
 ## Playbook (what the AI has learned)
 
-1. Prioritize quick, twisty quizzes in geography, science, math, Minecraft, and trending topics (sports, cars, gaming).  
-2. Keep difficulty at easy to medium; skip overly simple or obscure questions that attract little engagement.  
-3. Start each short with a 2‑second hook teasing a surprising fact or challenge.  
-4. Title videos as a concise 6‑8 word question, beginning with “Guess”, “What”, or “Reverse”, and attach one specific hashtag.  
-5. Use one or two highly relevant tags (e.g., #carquiz, #minecraft, #sciencequiz) and keep the list short.  
-6. Avoid generic general‑knowledge or plain flag‑guessing unless it includes a twist or countryballs style.  
-7. Add a unique twist—reverse names, impossible challenge, hidden clues—to sports or common trivia to boost interest.  
-8. Never copy another channel’s exact title or wording; craft fresh phrasing for each quiz.
+Double down on iconic Minecraft crafting and milestone mechanics, avoiding niche mob drop trivia.
+Focus science quizzes on relatable biology and nature questions, avoiding overdone planetary trivia.
+Limit math shorts to multi-digit addition challenges; eliminate percentages and subtraction.
+Keep difficulty strictly easy and universally recognizable, dropping medium-level obscurities.
+Frame animal quizzes around simple 3-choice concepts like diet rather than crowded multi-choice taxonomy.
+Format titles as direct "What..." questions or the proven "Quick maths:" challenge hook.
+Limit multiple-choice questions to 3 or 4 clear options to keep viewer participation frictionless.
+Strictly exclude all quizzes regarding countries, capitals, continents, and flags.
 
 ## What other quiz channels are doing
 
