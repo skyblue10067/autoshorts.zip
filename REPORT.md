@@ -4,6 +4,7 @@ Typical video: 0.7 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
+| - | - | - | - | multiple_choice/science | What is the chemical symbol for Mercury? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Silicon? |
 | - | - | - | - | multiple_choice/minecraft | What do you craft with Blaze Powder and an Ender Pearl? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Oxygen? |
@@ -43,7 +44,6 @@ Typical video: 0.7 views/day
 | - | - | - | - | multiple_choice/minecraft | Which Minecraft mob drops a slimeball? |
 | - | - | - | - | multiple_choice/animals | What is a baby frog called? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Potassium? |
-| OK | 15 | - | 0 | multiple_choice/minecraft | Which Minecraft mob drops a phantom membrane? |
 
 ## Latest comments
 
