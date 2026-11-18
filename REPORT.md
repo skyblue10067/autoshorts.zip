@@ -1,9 +1,10 @@
 # Channel report
 
-Typical video: 0.8 views/day
+Typical video: 0.7 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
+| - | - | - | - | multiple_choice/minecraft | What do you craft with Blaze Powder and an Ender Pearl? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Oxygen? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Zinc? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Neon? |
@@ -43,7 +44,6 @@ Typical video: 0.8 views/day
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Potassium? |
 | OK | 15 | - | 0 | multiple_choice/minecraft | Which Minecraft mob drops a phantom membrane? |
 | GOOD | 58 | - | 3 | multiple_choice/animals | Is a deer a carnivore, herbivore or omnivore? |
-| WEAK | 3 | - | 0 | multiple_choice/animals | Is a bat a fish, mammal, bird, reptile or amphibian? |
 
 ## Latest comments
 
