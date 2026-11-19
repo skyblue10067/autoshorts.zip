@@ -702,6 +702,16 @@
    "difficulty": "medium",
    "title": "Symbol for Mercury?",
    "id": null
+  },
+  {
+   "n": 65,
+   "hook": "What is the chemical symbol for Silver?",
+   "type": "multiple_choice",
+   "emoji": "",
+   "format": "multiple_choice/science",
+   "difficulty": "medium",
+   "title": "Symbol for Silver?",
+   "id": null
   }
  ],
  "playbook": "Double down on iconic Minecraft crafting and milestone mechanics, avoiding niche mob drop trivia.\nFocus science quizzes on relatable biology and nature questions, avoiding overdone planetary trivia.\nLimit math shorts to multi-digit addition challenges; eliminate percentages and subtraction.\nKeep difficulty strictly easy and universally recognizable, dropping medium-level obscurities.\nFrame animal quizzes around simple 3-choice concepts like diet rather than crowded multi-choice taxonomy.\nFormat titles as direct \"What...\" questions or the proven \"Quick maths:\" challenge hook.\nLimit multiple-choice questions to 3 or 4 clear options to keep viewer participation frictionless.\nStrictly exclude all quizzes regarding countries, capitals, continents, and flags.",
