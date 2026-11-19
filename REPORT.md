@@ -4,6 +4,7 @@ Typical video: 0.7 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
+| - | - | - | - | multiple_choice/science | What is the chemical symbol for Nitrogen? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Silver? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Mercury? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Silicon? |
@@ -43,7 +44,6 @@ Typical video: 0.7 views/day
 | - | - | - | - | multiple_choice/animals | Is a lion a carnivore, herbivore or omnivore? |
 | - | - | - | - | multiple_choice/animals | Is a shark a fish, mammal, bird, reptile or amphibian? |
 | - | - | - | - | multiple_choice/minecraft | Which Minecraft mob drops a slimeball? |
-| - | - | - | - | multiple_choice/animals | What is a baby frog called? |
 
 ## Latest comments
 
