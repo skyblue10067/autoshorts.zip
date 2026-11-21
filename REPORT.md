@@ -1,9 +1,10 @@
 # Channel report
 
-Typical video: 0.7 views/day
+Typical video: 0.6 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
+| - | - | - | - | multiple_choice/animals | What is a baby duck called? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Calcium? |
 | - | - | - | - | multiple_choice/animals | What is a baby swan called? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Sulfur? |
@@ -43,7 +44,6 @@ Typical video: 0.7 views/day
 | - | - | - | - | multiple_choice/minecraft | Which Minecraft mob drops a blaze rod? |
 | - | - | - | - | multiple_choice/animals | What is a baby cat called? |
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Lead? |
-| - | - | - | - | multiple_choice/minecraft | Which Minecraft mob drops magma cream? |
 
 ## Latest comments
 
