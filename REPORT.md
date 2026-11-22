@@ -4,6 +4,7 @@ Typical video: 0.6 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
+| - | - | - | - | multiple_choice/animals | What is a baby hen called? |
 | - | - | - | - | multiple_choice/animals | What is a baby cow called? |
 | - | - | - | - | multiple_choice/animals | What is a baby horse called? |
 | - | - | - | - | multiple_choice/animals | What is a baby kangaroo called? |
@@ -43,7 +44,6 @@ Typical video: 0.6 views/day
 | - | - | - | - | multiple_choice/science | What is the chemical symbol for Iron? |
 | - | - | - | - | multiple_choice/minecraft | Which Minecraft mob drops a ghast tear? |
 | - | - | - | - | multiple_choice/animals | Is a horse a carnivore, herbivore or omnivore? |
-| - | - | - | - | multiple_choice/animals | Is a frog a fish, mammal, bird, reptile or amphibian? |
 
 ## Latest comments
 
