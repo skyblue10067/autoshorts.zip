@@ -1,6 +1,6 @@
 # Channel report
 
-Typical video: 0.6 views/day
+Typical video: 0.5 views/day
 
 | Verdict | Views | Watched % | Likes | Format | Question |
 |---|---|---|---|---|---|
